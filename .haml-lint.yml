@@ -1,0 +1,10 @@
+linters:
+  LineLength:
+    max: 120
+
+  Indentation:
+    character: space
+    width: 2
+
+  FinalNewline:
+    enabled: true

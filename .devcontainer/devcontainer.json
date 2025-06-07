@@ -1,0 +1,44 @@
+{
+  "name": "VedicCRM Dev Container",
+  // Specify the relative path to your docker-compose.yml
+  "dockerComposeFile": [
+    "../docker-compose.yml"
+  ],
+  // The service for which the container is created (the name matches the service in docker-compose.yml)
+  "service": "web",
+  // A folder inside the container that VS Code will open as "workspace"
+  "workspaceFolder": "/app",
+  // Pass the necessary environment variables to the container (optional)
+  "remoteEnv": {
+    "GIT_PATH": "/.git"
+  },
+  // List of VS Code extensions that will be immediately installed in the container
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bracketpaircolordlw.bracket-pair-color-dlw",
+        "bung87.vscode-gemfile",
+        "christian-kohler.npm-intellisense",
+        "ckolkman.vscode-postgres",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "github.copilot",
+        "github.copilot-chat",
+        "ionutvmi.path-autocomplete",
+        "kamikillerto.vscode-colorize",
+        "karunamurti.haml",
+        "kisstkondoros.vscode-gutter-preview",
+        "manuelpuyol.erb-linter",
+        "mhutchie.git-graph",
+        "ms-azuretools.vscode-containers",
+        "ms-azuretools.vscode-docker",
+        "oderwat.indent-rainbow",
+        "shardulm94.trailing-spaces",
+        "shopify.ruby-lsp",
+        "stylelint.vscode-stylelint",
+        "waderyan.gitblame",
+        "zignd.html-css-class-completion"
+      ]
+    }
+  }
+}

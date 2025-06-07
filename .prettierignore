@@ -1,0 +1,14 @@
+node_modules
+dist
+build
+public
+*.log
+
+**/*.rb
+**/*.rake
+**/*.erb
+**/config/**/*.yml
+tmp
+log
+**/*.html.erb
+**/*.haml.erb

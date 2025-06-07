@@ -1,0 +1,68 @@
+- provide(:title, t('.title'))
+
+.row
+  .col-xs-12
+    .row.person-brief
+      .col-xs-12
+        .row
+          .col-xs-12
+            %h2
+              = current_person.complex_name
+        .row
+          .col-xs-12.col-sm-5.col-md-4.col-lg-3
+            .row
+              .col-xs-12
+                = person_photo(current_person, :standart, class: 'img-thumbnail img-version-standart')
+            .row.vert-offset-top-1.vert-offset-bottom-1
+              .col-xs-12.text-muted
+                = t('.registration_id')
+                = current_person.id
+
+          .col-xs-12.col-sm-7.col-md-8.col-lg-9
+            .row
+              .col-xs-12
+                = link_to t("links.edit_profile"), edit_person_registration_path(current_person)
+
+              .col-xs-12.vert-offset-top-1
+                = link_to t(".edit_subscriptions"), edit_subscriptions_path
+
+              - @person_academic_groups.each do |groups, localization_key|
+                - if groups.any?
+                  .col-xs-12.vert-offset-top-1
+                    = t(localization_key)
+
+                    - groups.each do |academic_group|
+                      = link_to academic_group.title, academic_group_path(academic_group)
+
+  .col-xs-12.vert-offset-top-1#pending_docs
+    = render "shared/pending_docs", person: @application_person, is_links: true
+
+  - if policy(ClassSchedule).ui_person?
+    .col-xs-12
+      %h3.text-center
+        = t(".schedules_title")
+    .col-xs-12
+      - content_for(:js_and_css) do
+        = javascript_include_tag "generated/react-bundle", type: "text/javascript"
+        = javascript_include_tag "generated/schedule-list-bundle", type: "text/javascript"
+
+      = react_component("ScheduleListApp",
+        props: { url: ui_person_class_schedules_path,
+          headers: class_schedules_table_headers,
+          noSchedules: t("academic_groups.show.no_pending_schedules") })
+
+  .col-xs-12.vert-offset-top-1
+    %h3.text-center
+      = t(".study_applications")
+  .col-xs-12.stop_double_submit#study_application
+    = render "shared/study_application",
+             person: @application_person,
+             programs: @programs,
+             study_application: @new_study_application,
+             is_links_in_pending_docs: true
+
+  .col-xs-12.vert-offset-top-1
+    %h3.text-center
+      = t(".certificates")
+  .col-xs-12
+    = render "shared/certificates_table", certificates: @certificates

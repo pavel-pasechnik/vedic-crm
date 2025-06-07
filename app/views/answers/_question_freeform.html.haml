@@ -1,0 +1,5 @@
+= q.simple_fields_for :answers, answers_by_question_id[q.object.id] do |a|
+  .col-xs-12.vert-offset-bottom-1
+    = a.input :person_id, as: :hidden
+    = "#{q.object.position}. #{q.object.data[:text][locale]}"
+    = a.input :data, label: false, input_html: { rows: 4 }

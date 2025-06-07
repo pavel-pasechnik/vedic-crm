@@ -1,0 +1,20 @@
+.col-xs-12.col-sm-6.vert-offset-top-1
+  = simple_nested_form_for(@person, defaults: { required: false }) do |f|
+    = f.error_notification
+
+    .form-inputs
+      = person_photo(f.object, :standart)
+      = f.input :photo, as: :file
+      = f.input :photo_cache, as: :hidden
+      = f.input :email, autofocus: true
+      = f.input :diploma_name
+      = f.input :name
+      = f.input :middle_name
+      = f.input :surname
+      = render "shared/nested_telephones", f: f
+      = f.input :gender, collection: [ [ :male, true ], [ :female, false ] ],
+                         label_method: lambda { |element| t("simple_form.options.person.gender.#{element.first}") }
+      = f.input :birthday, as: :string, input_html: { type: "date", value: date_value(f.object.birthday) }
+
+    .form-actions
+      = f.button :submit

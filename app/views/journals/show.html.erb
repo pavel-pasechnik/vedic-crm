@@ -1,0 +1,19 @@
+<%- provide(:title, t(".journal")) %>
+
+<div class="row">
+  <div class="col-xs-12 text-center">
+    <h1><%= t ".journal" %></h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <%= render "shared/versions", versions: @versions, authors: @users %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 text-center">
+    <%= paginate @versions %>
+  </div>
+</div>

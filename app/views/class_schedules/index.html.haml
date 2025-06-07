@@ -1,0 +1,18 @@
+- provide(:title, "Class Schedules")
+
+.row.vert-offset-bottom-1
+  .col-xs-12
+    %h1 Listing Class Schedules
+
+    - if current_person.can_act?("class_schedule:new")
+      = link_to "New Class Schedule", new_class_schedule_path, class: "btn btn-xs btn-success"
+
+- content_for(:js_and_css) do
+  = javascript_include_tag "generated/react-bundle", type: "text/javascript"
+  = javascript_include_tag "generated/schedule-list-bundle", type: "text/javascript"
+
+= react_component("ScheduleListApp",
+  props: { url: ui_class_schedules_path,
+    headers: class_schedules_table_headers,
+    noSchedules: t("academic_groups.show.no_pending_schedules"),
+    hideDirections: true })

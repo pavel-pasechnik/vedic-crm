@@ -1,0 +1,44 @@
+- provide(:title, @academic_group.title)
+
+.row
+  %h1.col-xs-12
+    = @academic_group.title
+
+  .col-xs-12.clearfix
+    .pull-right
+      - if @academic_group.active? && policy(@academic_group).graduate?
+        = link_to t('links.graduate'),
+                  graduate_academic_group_path(@academic_group),
+                  method: :post, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-warning'
+      - if policy(@academic_group).edit?
+        = link_to t('links.edit'), edit_academic_group_path(@academic_group), class: 'btn btn-xs btn-primary'
+      - if policy(@academic_group).destroy?
+        = link_to t('links.delete'), academic_group_path(@academic_group), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger'
+
+  .col-xs-12
+    %ul.nav.nav-tabs.admin-tabs
+      %li{ class: "active" }
+        = link_to t(".tab_general"), "#general", data: { toggle: "tab" }
+      %li
+        = link_to t(".tab_schedules"), "#schedules", data: { toggle: "tab" }
+      %li
+        = link_to t(".tab_group_list"), "#group_list", data: { toggle: "tab" }
+      %li
+        = link_to t(".tab_attendance"), "#group_attendance", data: { toggle: "tab" }
+      %li
+        = link_to t(".tab_academic_performance"), "#academic_performance", data: { toggle: "tab" }
+
+    .tab-content
+      .tab-pane#general.active
+        = render "tab_general", academic_group: @academic_group
+      .tab-pane#schedules
+        = render "tab_schedules", academic_group_id: @academic_group.id
+      .tab-pane#group_list
+        = render "tab_student_list", students: @academic_group.active_students, academic_group: @academic_group
+      .tab-pane#group_attendance
+        = render "tab_attendance", academic_group_id: @academic_group.id, people: @people_for_attendance
+      .tab-pane#academic_performance
+        = render "tab_academic_performance",
+                 people: @people_for_attendance,
+                 examinations: @examinations,
+                 examination_results: @examination_results

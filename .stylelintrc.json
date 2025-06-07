@@ -1,0 +1,11 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-clean-order", "stylelint-config-twbs-bootstrap"],
+  "plugins": ["stylelint-order", "stylelint-prettier"],
+  "rules": {
+    "prettier/prettier": true,
+    "media-feature-range-notation": "context",
+    "selector-class-pattern": null,
+    "custom-property-pattern": null,
+    "keyframes-name-pattern": null
+  }
+}

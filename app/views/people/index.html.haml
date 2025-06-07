@@ -1,0 +1,42 @@
+- provide(:title, "All People")
+
+.row
+  .col-xs-12
+    %h1.text-center People
+
+- if !params[:without_application] && !params[:with_application]
+  .row.vert-offset-top-2.vert-offset-bottom-2
+    .col-xs-12.col-md-6.col-md-offset-3.col-lg-4.col-lg-offset-4
+      = form_for :search, url: people_path, method: :get do |f|
+        = f.text_field :query, class: "form-control", type: :search, placeholder: t(".search_placeholder"), value: @search_query
+
+.row
+  .col-xs-12
+    .table-responsive
+      %table.table.table-condensed.table-striped
+        %thead
+          %tr
+            %th #
+            %th Photo
+            %th Full Name
+            %th Group or Application
+        %tbody
+          - @people.each_with_index do |person, index|
+            %tr
+              %td
+                #{@people.default_per_page * ( @people.current_page.pred) + index.next}
+              %td
+                = thumb_with_pop(person)
+              %td
+                = link_to_show_person_or_name(person)
+              %td
+                - if person.last_academic_groups.any?
+                  - person.last_academic_groups.each do |academic_group|
+                    = link_to academic_group.title, academic_group_path(academic_group)
+                - elsif person.study_application.present?
+                  = person.study_application.program["title_#{locale}"]
+                  = "(application time #{I18n.l(person.study_application.created_at, format: :long)})"
+                - else
+                  = "(registration time #{I18n.l(person.created_at, format: :long)})"
+  .col-xs-12.text-center
+    = paginate @people

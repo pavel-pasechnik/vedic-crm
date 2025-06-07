@@ -1,0 +1,22 @@
+- provide(:title, @questionnaire["title_#{locale}"])
+
+.row
+  .col-xs-12
+    = simple_form_for @questionnaire, url: answer_path do |f|
+      .row
+        .col-xs-12
+          %h2
+            = @questionnaire["title_#{locale}"]
+      .row
+        .col-xs-12
+          %h4
+            = @questionnaire["description_#{locale}"]
+      .row
+        .col-xs-12
+          = render "shared/error_messages", object: f.object
+      .row.vert-offset-top-2
+        = f.simple_fields_for :questions, @questions do |q|
+          = render "question_#{q.object.format}", q: q, person: current_person, answers_by_question_id: @answers_by_question_id
+      .row.vert-offset-top-1
+        .col-xs-12
+          = f.button :submit, t(".update")

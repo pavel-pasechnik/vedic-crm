@@ -1,0 +1,70 @@
+
+services:
+  db:
+    container_name: db
+    image: postgres:17.5-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  redis:
+    container_name: redis
+    image: redis:8.0.2-alpine
+    command: ['redis-server', '--appendonly', 'yes']
+    entrypoint:
+       - sh
+       - -lc
+       - |
+         chown -R redis:redis /data
+         exec redis-server --appendonly yes
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+
+  web:
+    container_name: web
+    image: vedic_crm:dev
+    build:
+      context: .
+      dockerfile: docker/akadem_students/Dockerfile
+      target: development
+    command: |
+      bash -lc "
+        # Waiting for Postgres and Redis to step up
+        until nc -z db 5432; do echo 'Waiting for Postgres...'; sleep 1; done
+        until nc -z redis 6379; do echo 'Waiting for Redis...'; sleep 1; done
+
+        # Create/migrate base
+        bundle exec rails db:create db:migrate
+
+        # Running Vite Dev Server on 0.0.0.0.0:5173.
+        # --host 0.0.0.0 makes the server available from the container
+        bin/vite dev --host 0.0.0.0 &
+
+        # And then we launch Puma right away
+        bundle exec puma -C config/puma.rb
+      "
+    volumes:
+      - .:/app
+    working_dir: /app
+    ports:
+      - "3000:3000"    # Rails
+      - "5173:5173"    # Vite Dev Server
+    environment:
+      RAILS_ENV: development
+      DATABASE_HOST: db
+      DATABASE_USER: postgres
+      DATABASE_PASSWORD: postgres
+      REDIS_URL: redis://redis:6379/1
+    depends_on:
+      - db
+      - redis
+
+volumes:
+  db_data:
+  redis_data:
