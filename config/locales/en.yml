@@ -29,3 +29,18 @@
 
 en:
   hello: 'Hello world'
+  activerecord:
+    errors:
+      models:
+        class_schedule:
+          attributes:
+            classroom:
+              availability: 'is not available at this time'
+            teacher_profile:
+              availability: "is not available at this time"
+        telephone:
+              invalid: "is invalid"
+      messages:
+        record_invalid: "Validation failed: %{errors}"
+  locale_label: English (ENG)
+  application_title: Kyiv Spriritual Academy for Krishna Consciousness Students

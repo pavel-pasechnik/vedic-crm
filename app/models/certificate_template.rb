@@ -1,3 +1,4 @@
+require_relative "../uploaders/pdf_uploader"
 class CertificateTemplate < ApplicationRecord
   validates :title, presence: true
   attribute :is_final_score_required, :boolean, default: false

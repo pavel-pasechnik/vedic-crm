@@ -1,0 +1,417 @@
+uk:
+  not_authorized: 'Не вистачає прав, щоб виконати цю дію.'
+  cannot_destroy_template_with_issued_certificates: 'Не можна видалити шаблон, який має видані сертифікати'
+  recaptcha:
+    errors:
+      incorrect-captcha-sol:  'Перевірка невдала.'
+      recaptcha_unreachable:  "Неможливо звя'язатися з сервісом перевірки."
+  defaults:
+    links:
+      academic_groups_add:  'Додати групу'
+      academic_groups_list: 'Список груп'
+      academic_groups:      'Групи'
+      active_groups:        'Активні'
+      agreement:            'Згода'
+      certificate_template_fonts_list: 'Шрифти'
+      certificate_templates_add:  'Додати'
+      certificate_templates_list: 'Список'
+      certificate_templates:      'Шаблони сертифікатів'
+      changelog:            'Журнал змін'
+      class_schedules_add:  'Додати'
+      class_schedules_list: 'Список'
+      class_schedules:      'Розклад'
+      courses_add:          'Додати предмет'
+      courses_list:         'Список предметів'
+      courses:              'Предмети'
+      home:                 'Головна'
+      import_certificates: 'Імпорт сертифікатів'
+      journal:              'Журнал дій'
+      main_menu:            'Дії'
+      people_add:           'Додати людину'
+      people_list:          'Усі люди'
+      people_without_applications:  'Без заяв'
+      people:               'Люди'
+      programs_add:  'Додати курс'
+      programs_list: 'Список курсів'
+      programs:      'Учбові курси'
+      questionnaires_list: 'Список опитувальників'
+      questionnaires: 'Опитувальники'
+      signatures_list: 'Підписи'
+      statistics_yearly_active_students: 'Активні студенти по рокам'
+      statistics_yearly_certificates: 'Сертифікати по рокам'
+      statistics: 'Статистика'
+  locale_label: Українська (UKR)
+  application_title: Студенти Київської Духовної Академії Свідомості Кришни
+  links:
+    apply_to_program: 'Подати заяву'
+    back: 'Назад'
+    copy: 'Копівати'
+    crop_photo: 'Обрізати фотографію'
+    delete: 'Видалити'
+    edit_profile: 'Редагувати профіль'
+    edit: 'Редагувати'
+    graduate: 'Випуск'
+    list: 'Список'
+    new: 'Створити'
+    statistics: 'Статистика'
+    show: 'Перегляд'
+    update: 'Зберегти'
+    withdraw: 'Відкликати заяву'
+  alerts:
+    delete_confirmation: 'Ви впевнені що хочете це ВИДАЛИТИ???'
+  content:
+    ask_manager:              'По організаційним питанням, звертайтеся до адміністратора курсу:'
+    apply_to_programs:        'У Вас є можливість поступити на такі курси:'
+    confirm_withdraw:         'Ви впевнені, що хочете відкликати заяву на навчання?'
+    you_applied:              'Ви подали заяву на курс'
+    application_requirements: 'Щоб продовжити начання, НЕОБХІДНО виконати наступні умови:'
+    fill_questionnaire:       'Заповнити'
+    attach_photo:             'Додати фотографію'
+    in_profile:               'до профілю'
+    form_has_errors:
+      one:    'Виправте будь ласка %{count} помилку:'
+      few:    'Виправте будь ласка %{count} помилки:'
+      many:   'Виправте будь ласка %{count} помилок:'
+      other:  'Виправте будь ласка %{count} помилки:'
+  answers:
+    edit:
+      update: 'Надіслати відповідь'
+  certificates:
+    index:
+      academic_group: 'Група'
+      final_score: 'Середній бал'
+      issued_date: 'Дата видачі'
+      person: 'Студент'
+      serial_id: 'Серійний номер'
+      title: 'Сертифікати "%{certificate_template_title}"'
+      actions: 'Дії'
+      delete: 'Видалити'
+      are_you_sure: "Ви впевнені, що хочете видалити цей сертифікат?"
+    destroy:
+      success: "Сертифікат успішно видалено."
+      failure: "Помилка видалення сертифіката."
+      not_found: "Сертифікат не знайдено."
+  certificate_imports:
+    new:
+      submit: 'Імпортувати'
+      title: 'Імпорт сертифікатів'
+      file_is_not_present_alert: 'Оберіть файл'
+    create:
+      title: 'Результати імпортування сертифікатів'
+      serial_column: 'Серійний номер'
+      person_column: 'Студент'
+      template_column: 'Шаблон сертифікату'
+      final_score_column: 'Результуючий бал по курсу'
+      certificate_creation_details_column: 'Результат створення сертифікату'
+  certificate_template_fonts:
+    edit:
+      submit: 'Оновити шрифт'
+      title: 'Редагування шрифту'
+    index:
+      actions: 'Дії'
+      template_title: 'Назва шрифту'
+      title: 'Шрифти сертифікатів'
+    new:
+      submit: 'Створити шрифт'
+      title: 'Створення шрифту сертифікату'
+  certificate_templates:
+    edit:
+      submit:   'Оновити шаблон сертифікату'
+      title:    'Редагування шаблону сертифікату'
+    index:
+      actions: 'Дії'
+      template_title: 'Назва шаблону'
+      title: 'Шаблони сертифікатів'
+      certificates_count: 'Сертифікатів видано'
+      id: 'ID'
+    new:
+      submit:   'Створити шаблон сертифікату'
+      title:    'Створення шаблону сертифікату'
+    form:
+      file_present: 'Шаблони вже присутній. Обрати новий?'
+      file_not_present: 'Шаблон ще не було завантажено'
+  courses:
+    new:
+      title: 'Створення нового предмету'
+      submit: 'Створити'
+    edit:
+      title: 'Редагування предмету'
+      submit: 'Зберегти'
+    index:
+      actions:      'Дії'
+      course_title: 'Назва'
+      course_variant: 'Варіант'
+      title:        'Предмети'
+      course_examination_results_count: 'Кількість зданих залікових робіт'
+      course_class_schedules_count: 'Створено розкладів'
+    show:
+      academic_group_title: 'Назва'
+      actions:              'Дії'
+      associated_academic_groups: "Пов'язані групи"
+      associated_teachers:  'Викладачі предмету'
+      class_schedules_count: 'Кількість згадувань у розкладі:'
+      examination_title:    'Назва'
+      examinations:         'Залікові роботи'
+      max_result:           'Макс.'
+      min_result:           'Мін.'
+      passing_score:        'Прохідний'
+      course_description: 'Опис'
+      course_variant: 'Варіант'
+      total_examination_results_count: 'Загальна кількість зданих залікових робіт'
+      results_per_examination: 'Кількість зданих залікових робіт'
+      course_description_help: 'Може відображатися студентам'
+      course_variant_help: 'Відображається тільки адміністраторам, щоб відрізняти дуже схожі предмети'
+    destroy:
+      unable_to_destroy: 'Неможливо видалити предмет бо'
+      remove_class_schedules_first: "з ним пов'язано %{class_schedules_count} розкладів занять"
+      remove_examination_results_first: 'він має %{examination_results_count} зданих залікових робіт'
+      prerequisites_are_not_met: "З цим предметом пов`язані розклади занять та здані залікові роботи. Спочатку приберіть ці зв'язки"
+  crops:
+    crop_image:
+      title:    'Кадрування зображення'
+      select_area:  'Визначте площу для відображення'
+      preview:      'Передперегляд'
+      guide:        'Приклад'
+      crop:         'Застосувати'
+    error:          'Помилка: не вдалося кадрировати зображення'
+  devise:
+    passwords:
+      new:
+        restore_password: 'Відновлення паролю'
+        send_me:          'Відправити інструкції для відновлення'
+      edit:
+        change_password:        'Зміна паролю'
+        new_password:           'Новий пароль'
+        password_confirmation:  'Підтвердження нового паролю'
+        change:                 'Змінити пароль'
+  examinations:
+    new:
+      form_title:     'Нова залікова робота'
+      submit_label:   'Створити залікову роботу'
+    edit:
+      form_title:     'Редагувати залікову роботу'
+      submit_label:   'Зберегти залікову роботу'
+    destroy:
+      remove_examination_results_first: 'Неможливо видалити залікову роботу бо студенти вже її здавали %{examination_results_count} разів, видаліть ці оцінки спочатку'
+  users:
+    emails:
+      new:
+        forgot_email: 'Забули електронну пошту?'
+        enter_phone:  'Введіть телефон'
+        get_email:    'Нагадати пошту'
+      create:
+        title:        'Адреси електронної пошти закреплені за цим номером телефону:'
+        no_telephone: 'Такий номер телефону не зареєстрований.'
+    registrations:
+      edit:
+        title:  'Редагування профілю'
+      new:
+        i_agree_html: 'Я прочитав(ла) і згоден(на) зі <a href="/privacy_agreement" target="_blank">згодою на обробку персональних даних</a>'
+        title:        'Реєстрація'
+  signatures:
+    edit:
+      submit: 'Оновити підпис'
+      title: 'Редагування підпису'
+    index:
+      actions: 'Дії'
+      template_title: 'Назва підпису'
+      title: 'Підписи сертифікатів'
+    new:
+      submit: 'Створити підпис'
+      title: 'Створення підпису сертифікату'
+  static_pages:
+    home:
+      certificates: 'Сертифікати'
+      currently_administrated_academic_groups: 'Ви є координатором у групах:'
+      currently_curated_academic_groups: 'Ви є куратором у групах:'
+      currently_praeposted_academic_groups: 'Ви є старостою у групах:'
+      ex_student_of_academic_groups: 'Ви були студентом груп:'
+      message_for_group: "Об'ява для групи:"
+      previously_administrated_academic_groups: 'Ви були координатором у групах:'
+      previously_curated_academic_groups: 'Ви були куратором у групах:'
+      previously_praeposted_academic_groups: 'Ви були старостою у групах:'
+      schedules_title: 'Ваш персональний розклад'
+      student_of_academic_groups: 'Ви студент груп:'
+      study_applications: 'Заяви на навчання'
+      title: 'Домашня'
+      edit_subscriptions: 'Редагувати підписки'
+      registration_id: 'Реєстраційний номер:'
+  people:
+    show:
+      not_adult:            '(ще нема 16!)'
+      psycho_test_results:  'Результати психологічного тесту'
+      special_notes:        'Cпеціальні нотатки'
+      no_special_notes:     'поки що нотаток немає'
+      completed_questionnaires: 'Заповнені опитувальники'
+      study_applications: 'Заяви на навчання'
+    index:
+      search_placeholder: 'Кого Ви шукаєте?'
+  programs:
+    index:
+      title: 'Учбові курси'
+      program_title: 'Назва курсу'
+      program_manager: 'Адміністратор курсу'
+      program_manager_help: 'Його контакти бачать студенти що подали заяву курс і він отрумує лісти на пошту коли подають нову заяву'
+      program_study_applications_count: 'Кількість неопрацьованих заявок від студентів'
+      program_position: 'Позиція для сортування'
+      program_position_help: 'Чим менше число, тим вище цей курс буде у списку, який бачать студенти'
+      program_visibility: 'Видимість'
+      program_visibility_help: 'Не видимий курс бачать адміністратори, але він не пропонується студентам, щоб подати на нього заяву'
+      program_questionnaires_count: 'Кількість опитувальників'
+      actions: 'Дії'
+    new:
+      title: 'Створення нового учбового курсу'
+      submit: 'Створити'
+    form:
+      select_manager_placeholder: 'Оберіть адміністратора курсу'
+      select_questionnaires_placeholder: 'Додайте опитувальники'
+      questionnaires_hint: 'Ці опитувальники автоматично назначаються студенту, після того як він подає заяву на цей курс'
+    edit:
+      title: 'Редагування учбового курсу'
+      submit: 'Зберегти'
+    destroy:
+      process_study_applications_first: 'Неможливо видалити учбовий курс бо він має %{study_applications_count} неопрацьованих заяв на навчання. Опрацюйте їх спочатку.'
+  notes:
+    new:
+      title: 'Нова нотатка'
+      submit: 'Створити'
+    edit:
+      title: 'Редагувати нотатку'
+      submit: 'Зберегти'
+  academic_groups:
+    show:
+      active_students_count:    'Активних студентів:'
+      administrator:            'Координатор'
+      attendance_template_pdf:  ' Бланк відвідуванності'
+      birthday:                 'День народження'
+      curator:                  'Куратор'
+      full_name:                "Ім'я"
+      group_list_pdf:           ' PDF із фото'
+      group_servants:           'Слуги групи'
+      mataji_count:             'Матаджи'
+      no_pending_schedules:     'Немає подій для відображення'
+      photo:                    'Фото'
+      prabhu_count:             'Прабгу'
+      praepostor:               'Староста'
+      tab_academic_performance: 'Успішність'
+      tab_attendance:           'Bідвідуваність'
+      tab_general:              'Огляд'
+      tab_group_list:           'Список групи'
+      tab_schedules:            'Розклад'
+      telephones:               'Телефони'
+    index:
+      title: 'Академічні групи'
+      table_title_name: 'Назва'
+      table_title_established: 'Дата створення'
+      table_title_graduated: 'Дата закінчення'
+      table_title_description: 'Опис'
+      table_title_active_students_count: 'Кількість активних студентів'
+      table_title_actions: 'Дії'
+      general_search_placeholder: 'Назва групи або опис'
+    form:
+      curator_placeholder: 'Оберіть куратора'
+      administrator_placeholder: 'Оберіть координатора'
+      praepostor_placeholder: 'Оберіть старосту'
+      message_hint: 'Показується на сторінці групи'
+      disabled_praepostor_hint: "Старосту можна обрати коли у групі з'являться студенти"
+      courses_hint: 'Залікові роботи з цих предметів будуть присутні на сторінці відмічання успішності групи'
+      courses_placeholder: "Оберіть пов'язні предмети"
+    edit:
+      title: 'Редагування групи'
+      submit: 'Зберегти'
+    new:
+      title: 'Створення групи'
+      submit: 'Створити'
+  class_schedules:
+    create_and_clone: 'Створити і копіювати'
+    table_headers:
+      course:     'Предмет'
+      teacher:    'Лектор'
+      subject:    'Тема'
+      groups:     'Групи'
+      classroom:  'Аудиторія'
+      time:       'Запланований час'
+      actions:    ''
+  group_attendance:
+    attendance_submitter:
+      absend:   'Відсутній'
+      back:     'Назад'
+      forth:    'Вперед'
+      present:  'Присутній'
+      unknown:  'Невідомо'
+  group_performance:
+    editor:
+      min:      'мін.'
+      max:      'макс.'
+      save:     'Зберегти'
+      delete:   'Видалити'
+      passing:  'прохідний'
+  journals:
+    show:
+      journal: 'Журнал'
+  unsubscribes:
+    edit:
+      cancel: Ні
+      edit_subscriptions: Увійти і редагувати мої підписки
+      expired: Посилання застаріло
+      notify_schedules: оновлень розкладу
+      submit: Так, відписатися
+      unsubscribe_from: Відписатися від
+      unsubscribe: Відписатися
+    destroy:
+      notify_schedules: оновлень розкладу
+      success: Ваша адреса відписана від
+      unsubscribe: Відписатися
+      errored: Сталася якась помилка
+      edit_subscriptions: Увійти і редагувати мої підписки
+  subscriptions:
+    form:
+      save: Зберегти
+      you_are_subscribed_to: 'Ви підписані на такі email розсилки:'
+    edit:
+      title: Редагувати підписки
+    update:
+      alert_html: 'Шось у Вашому профелю заважає зберегти підписки. <a href="%{edit_path}" target="_blank">Відрежагуйте профіль</a> і повертайтеся сюди.'
+      notice: Підписки збережено
+  questionnaires:
+    index:
+      title: 'Опитувальники'
+      questionnaire_title: 'Назва'
+      questionnaire_kind: 'Тип'
+    show:
+      program_title: 'Назва учбового курсу'
+      programs: "Пов'язані учбові курси"
+      question_format: 'Тип'
+      question_required: "Обов'язковість"
+      question_title: 'Питання'
+      questions: 'Питання'
+  shared:
+    advanced_search:
+      button_text_submit: 'Шукати'
+      button_tooltip_clear: 'Очистити'
+      button_tooltip_remove: 'Прибрати'
+    certificates_table:
+      final_score: 'Середній бал'
+      issued_date: 'Дата видачі'
+      no_certificates_yet: 'Покищо немає сертифікатів'
+      serial_id: 'Серійний номер'
+      template: 'Шаблон'
+      actions: 'Дії'
+      delete: 'Видалити'
+      confirm_delete: 'Ви впевнені, що хочете видалити цей сертифікат?'
+    nested_certificate_template_entries:
+      template_entries_title: Елементи шаблону
+    person_brief:
+      edit_subscriptions: Редагувати підписки
+    study_application:
+      click_to_learn_more: (натисніть щоб дізнатися більше)
+    versions:
+      created_at: 'Час'
+      event: 'Подія'
+      item_id: 'Ідентифікатор'
+      item_type: 'Тип'
+      changes: 'Зміни'
+      whodunnit: 'Автор'
+      prev_attributes: 'Було:'
+      next_attributes: 'Стало:'
+      not_enough_rights_to_display_changes: 'Не вистачає прав щоб відобразити зміни'

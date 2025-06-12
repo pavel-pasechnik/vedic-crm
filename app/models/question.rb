@@ -1,5 +1,5 @@
 class Question < ApplicationRecord
-  serialize :data, Hash
+  serialize :data, coder: JSON
 
   belongs_to :questionnaire
   has_many :answers, dependent: :destroy

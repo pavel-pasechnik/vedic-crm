@@ -1,0 +1,417 @@
+ru:
+  not_authorized: 'Не хватает прав, чтобы выполнить это действие.'
+  cannot_destroy_template_with_issued_certificates: 'Нельзя удалить шаблон, который имеет выданные сертификаты'
+  recaptcha:
+    errors:
+      incorrect-captcha-sol:  'Проверка не пройдена.'
+      recaptcha_unreachable:  'Невозможно связаться с сервисом проверки.'
+  defaults:
+    links:
+      academic_groups_add:  'Добавить группу'
+      academic_groups_list: 'Список групп'
+      academic_groups:      'Группы'
+      active_groups:        'Активные'
+      agreement:            'Соглашение'
+      certificate_template_fonts_list: 'Шрифты'
+      certificate_templates_add:  'Добавить'
+      certificate_templates_list: 'Список'
+      certificate_templates:      'Шаблоны сертификатов'
+      changelog:            'Журнал изменений'
+      class_schedules_add:  'Добавить'
+      class_schedules_list: 'Список'
+      class_schedules:      'Расписание'
+      courses_add:          'Добавить предмет'
+      courses_list:         'Список предметов'
+      courses:              'Предметы'
+      home:                 'Главная'
+      import_certificates: 'Импорт сертификатов'
+      journal:              'Журнал действий'
+      main_menu:            'Действия'
+      people_add:           'Добавить человека'
+      people_list:          'Все люди'
+      people_without_applications:  'Без заявлений'
+      people:               'Люди'
+      programs_add:  'Добавить курс'
+      programs_list: 'Список курсов'
+      programs:      'Учебные курсы'
+      questionnaires_list: 'Список опросников'
+      questionnaires: 'Опросники'
+      signatures_list: 'Подписи'
+      statistics_yearly_active_students: 'Активные студенты по годам'
+      statistics_yearly_certificates: 'Сертификаты по годам'
+      statistics: 'Статистика'
+  locale_label: Русский (RUS)
+  application_title: Студенты Киевской Духовной Академии Сознания Кришны
+  links:
+    apply_to_program: 'Подать заявление'
+    back: 'Назад'
+    copy: 'Копировать'
+    crop_photo: 'Обрезать фотографию'
+    delete: 'Удалить'
+    edit_profile: 'Редактировать профиль'
+    edit: 'Редактировать'
+    graduate: 'Выпуск'
+    list: 'Список'
+    new: 'Создать'
+    statistics: 'Статистика'
+    show: 'Просмотр'
+    update: 'Сохранить'
+    withdraw: 'Отозвать заявление'
+  alerts:
+    delete_confirmation: 'Вы уверены что хотите это УДАЛИТЬ???'
+  content:
+    ask_manager:              'По организационным вопросам, обращайтесь к администратору курса:'
+    apply_to_programs:        'У Вас есть возможность поступить на такие курсы:'
+    confirm_withdraw:         'Вы уверены, что хотите отозвать заявление на обучение?'
+    you_applied:              'Вы подали заявление на курс'
+    application_requirements: 'Чтобы продолжить обучение, НЕОБХОДИМО выполнить следующие условия:'
+    fill_questionnaire:       'Заполнить'
+    attach_photo:             'Добавить фотографию'
+    in_profile:               'в профиль'
+    form_has_errors:
+      one:    'Исправьте пожалуйста %{count} ошибку:'
+      few:    'Исправьте пожалуйста %{count} ошибки:'
+      many:   'Исправьте пожалуйста %{count} ошибок:'
+      other:  'Исправьте пожалуйста %{count} ошибок:'
+  answers:
+    edit:
+      update: 'Отправить ответ'
+  certificates:
+    index:
+      academic_group: 'Группа'
+      final_score: 'Средний бал'
+      issued_date: 'Дата выдачи'
+      person: 'Студент'
+      serial_id: 'Серийный номер'
+      title: 'Сертификаты "%{certificate_template_title}"'
+      actions: 'Действия'
+      delete: 'Удалить'
+      are_you_sure: 'Вы уверены, что хотите удалить этот сертификат?'
+    destroy:
+      success: 'Сертификат успешно удален.'
+      failure: 'Ошибка удаления сертификата.'
+      not_found: 'Сертификат не найден.'
+  certificate_imports:
+    new:
+      submit: 'Импортировать'
+      title: 'Импорт сертификатов'
+      file_is_not_present_alert: 'Выберите файл'
+    create:
+      title: 'Результати импортирования сертификатов'
+      serial_column: 'Серийный номер'
+      person_column: 'Студент'
+      template_column: 'Шаблон сертификата'
+      final_score_column: 'Результирующий бал по курсу'
+      certificate_creation_details_column: 'Результат создания сертификата'
+  certificate_template_fonts:
+    edit:
+      submit: 'Обновить шрифт'
+      title: 'Редактирование шрифта'
+    index:
+      actions: 'Действия'
+      template_title: 'Имя шрифта'
+      title: 'Шрифты сертификатов'
+    new:
+      submit: 'Создать шрифт'
+      title: 'Создание шрифта сертификата'
+  certificate_templates:
+    edit:
+      submit:   'Обновить шаблон сертификата'
+      title:    'Редактирование шаблона сертификата'
+    index:
+      actions: 'Действия'
+      template_title: 'Название шаблона'
+      title: 'Шаблоны сертификатов'
+      certificates_count: 'Сертификатов выдано'
+      id: 'ID'
+    new:
+      submit:   'Создать шаблон сертификата'
+      title:    'Создание шаблона сертификата'
+    form:
+      file_present: 'Шаблони уже присутствует. Выбрать новый?'
+      file_not_present: 'Шаблон еще не был загружен'
+  courses:
+    new:
+      title: 'Создание нового предмета'
+      submit: 'Создать'
+    edit:
+      title: 'Редактирование предмета'
+      submit: 'Сохранить'
+    index:
+      actions:      'Действия'
+      course_title: 'Название'
+      course_variant: 'Вариант'
+      title:        'Предметы'
+      course_examination_results_count: 'Количество сданных зачетных работ'
+      course_class_schedules_count: 'Создано расписаний'
+    show:
+      academic_group_title: 'Название'
+      actions:              'Действия'
+      associated_academic_groups: 'Связанные группы'
+      associated_teachers:  'Преподаватели предмета'
+      class_schedules_count: 'Количество упоминаний в расписании:'
+      examination_title:    'Название'
+      examinations:         'Зачетные работы'
+      max_result:           'Макс.'
+      min_result:           'Мин.'
+      passing_score:        'Проходной'
+      course_description: 'Описание'
+      course_variant: 'Вариант'
+      total_examination_results_count: 'Общее количество сданных зачетных работ'
+      results_per_examination: 'Количество сданных зачетных работ'
+      course_description_help: 'Может отображаться студентам'
+      course_variant_help: 'Отображается только администраторам, чтобы отличать очень похожие предметы'
+    destroy:
+      unable_to_destroy: 'Невозможно удалить предмет так как'
+      remove_class_schedules_first: "с ним связаны %{class_schedules_count} расписаний занятий"
+      remove_examination_results_first: 'он имеет %{examination_results_count} сданных зачетных работ'
+      prerequisites_are_not_met: "С этим предметом связаны расписания занятий и сданы зачетные работы. Сначала уберите эти связи"
+  crops:
+    crop_image:
+      title:        'Кадрирование изображения'
+      select_area:  'Обозначьте площадь для отображения'
+      preview:      'Предпросмотр'
+      guide:        'Пример'
+      crop:         'Применить'
+    error:          'Ошибка: не получилось кадрировать изображение'
+  devise:
+    passwords:
+      new:
+        restore_password: 'Восстановление пароля'
+        send_me:          'Отправить инструкции для восстановления'
+      edit:
+        change_password:        'Изменить пароль'
+        new_password:           'Новий пароль'
+        password_confirmation:  'Подтверждение нового пароля'
+        change:                 'Изменить пароль'
+  examinations:
+    new:
+      form_title:     'Новая зачетная работа'
+      submit_label:   'Создать зачетную работу'
+    edit:
+      form_title:     'Редактировать зачетную работу'
+      submit_label:   'Сохранить зачетную работу'
+    destroy:
+      remove_examination_results_first: 'Невозможно удалить зачетную работу, так как студенты уже ее сдавали %{examination_results_count} раз, удалите эти оценки сначала'
+  users:
+    emails:
+      new:
+        forgot_email: 'Забыли электронную почту?'
+        enter_phone:  'Введите телефон'
+        get_email:    'Напомнить почту'
+      create:
+        title:        'Адреса электронной почты закрепленные за этим номером телефона:'
+        no_telephone: 'Такой номер телефона не зарегистрирован.'
+    registrations:
+      edit:
+        title:  'Редактирование профиля'
+      new:
+        i_agree_html: 'Я прочитал(а) и согласен(на) с <a href="/privacy_agreement" target="_blank">соглашением на обработку персональных данных</a>'
+        title:        'Регистрация'
+  signatures:
+    edit:
+      submit: 'Обновить подпись'
+      title: 'Редактирование подписи'
+    index:
+      actions: 'Действия'
+      template_title: 'Название подписи'
+      title: 'Подписи сертификатов'
+    new:
+      submit: 'Создать подпись'
+      title: 'Создание подписи сертификата'
+  static_pages:
+    home:
+      certificates: 'Сертификаты'
+      currently_administrated_academic_groups: 'Вы являетесь координатором в группах:'
+      currently_curated_academic_groups: 'Вы являетесь куратором в группах:'
+      currently_praeposted_academic_groups: 'Вы являетесь старостой в группах:'
+      ex_student_of_academic_groups: 'Вы были студентом групп:'
+      message_for_group: 'Объявление для группы:'
+      previously_administrated_academic_groups: 'Вы были координатором в группах:'
+      previously_curated_academic_groups: 'Вы были куратором в группах:'
+      previously_praeposted_academic_groups: 'Вы были старостой в группах:'
+      schedules_title: 'Ваше персональное расписание'
+      student_of_academic_groups: 'Вы студент групп:'
+      study_applications: 'Заявления на обучение'
+      title: 'Домашняя'
+      edit_subscriptions: Редактировать подписки
+      registration_id: 'Регистрационный номер:'
+  people:
+    show:
+      not_adult:            '(еще нет 16!)'
+      psycho_test_results:  'Результаты психологического теста'
+      special_notes:        'Cпециальные заметки'
+      no_special_notes:     'пока что заметок нет'
+      completed_questionnaires: 'Заполненные опросники'
+      study_applications: 'Заявления на обучение'
+    index:
+      search_placeholder: 'Кого Вы ищете?'
+  programs:
+    index:
+      title: 'Учебные курсы'
+      program_title: 'Название курса'
+      program_manager: 'Администратор курса'
+      program_manager_help: 'Его контакты видят студенты подавшие заявление курс и получает письма на почту когда подают новое заявление'
+      program_study_applications_count: 'Количество необработанных заявлений от студентов'
+      program_position: 'Позиция сортировки'
+      program_position_help: 'Чем меньше число, тем выше этот курс будет в списке, который видят студенты'
+      program_visibility: 'Видимость'
+      program_visibility_help: 'Не видимый курс видят администраторы, но он не предлагается студентам, чтобы подать на него заявление'
+      program_questionnaires_count: 'Количество опросников'
+      actions: 'Действия'
+    new:
+      title: 'Создание нового учебного курса'
+      submit: 'Создать'
+    form:
+      select_manager_placeholder: 'Выберите администратора курса'
+      select_questionnaires_placeholder: 'Добавьте опросники'
+      questionnaires_hint: 'Эти опросники автоматически назначаются студенту после того, как он подает заявление на этот курс'
+    edit:
+      title: 'Редактирование учебного курса'
+      submit: 'Сохранить'
+    destroy:
+      process_study_applications_first: 'Невозможно удалить учебный курс, поскольку он имеет %{study_applications_count} необработанных заявлений на обучение. Обработайте их сначала.'
+  notes:
+    new:
+      title: 'Новая заметка'
+      submit: 'Создать'
+    edit:
+      title: 'Редактировать заметку'
+      submit: 'Сохранить'
+  academic_groups:
+    show:
+      active_students_count:    'Активных студентов:'
+      administrator:            'Координатор'
+      attendance_template_pdf:  ' Бланк посещаемости'
+      birthday:                 'День рождения'
+      curator:                  'Куратор'
+      full_name:                'Имя'
+      group_list_pdf:           ' PDF c фото'
+      group_servants:           'Слуги группы'
+      mataji_count:             'Матаджи'
+      no_pending_schedules:     'Нет событий для отображения'
+      photo:                    'Фото'
+      prabhu_count:             'Прабху'
+      praepostor:               'Староста'
+      tab_academic_performance: 'Успеваемость'
+      tab_attendance:           'Посещаемость'
+      tab_general:              'Осмотр'
+      tab_group_list:           'Список группы'
+      tab_schedules:            'Расписание'
+      telephones:               'Телефоны'
+    index:
+      title: 'Академические группы'
+      table_title_name: 'Название'
+      table_title_established: 'Дата создания'
+      table_title_graduated: 'Дата окончания'
+      table_title_description: 'Описание'
+      table_title_active_students_count: 'Количество активных студентов'
+      table_title_actions: 'Действия'
+      general_search_placeholder: 'Название группы или описание'
+    form:
+      curator_placeholder: 'Выберите куратора'
+      administrator_placeholder: 'Выберите координатора'
+      praepostor_placeholder: 'Выберите старосту'
+      message_hint: 'Отображается на странице группы'
+      disabled_praepostor_hint: 'Старосту можно выбрать, когда в группе появятся студенты'
+      courses_hint: 'Зачетные работы по этим предметам будут присутствовать на странице отмечания успеваемости группы'
+      courses_placeholder: 'Выберите связные предметы'
+    edit:
+       title: 'Редактирование группы'
+       submit: 'Сохранить'
+    new:
+      title: 'Создание группы'
+      submit: 'Создать'
+  class_schedules:
+    create_and_clone: 'Создать и копировать'
+    table_headers:
+      course:     'Предмет'
+      teacher:    'Лектор'
+      subject:    'Тема'
+      groups:     'Группы'
+      classroom:  'Аудитория'
+      time:       'Запланированное время'
+      actions:    ''
+  group_attendance:
+    attendance_submitter:
+      absend:   'Отсутствует'
+      back:     'Назад'
+      forth:    'Вперед'
+      present:  'Присутствует'
+      unknown:  'Не известно'
+  group_performance:
+    editor:
+      min:      'мин.'
+      max:      'макс.'
+      save:     'Сохранить'
+      delete:   'Удалить'
+      passing:  'проходной'
+  journals:
+    show:
+      journal: 'Журнал'
+  unsubscribes:
+    edit:
+      cancel: Нет
+      edit_subscriptions: Войти и редактировать мои подписки
+      expired: Ссылка устарела
+      notify_schedules: обновлений расписания
+      submit: Да, отписаться
+      unsubscribe_from: Отписаться от
+      unsubscribe: Отписаться
+    destroy:
+      notify_schedules: обновлений расписания
+      success: Ваш адресс отписан от
+      unsubscribe: Отписаться
+      errored: Случилась какая-то ошибка
+      edit_subscriptions: Войти и редактировать мои подписки
+  subscriptions:
+    form:
+      save: Сохранить
+      you_are_subscribed_to: 'Вы подписаны на такие email рассылки:'
+    edit:
+      title: Редактировать подписки
+    update:
+      alert_html: 'Что-то в Вашем профиле не дает сохранить подписки. <a href="%{edit_path}" target="_blank">Отредактируйте профиль</a> и возвращайтесь сюда.'
+      notice: Подписки сохранены
+  questionnaires:
+    index:
+      title: 'Опросники'
+      questionnaire_title: 'Название'
+      questionnaire_kind: 'Тип'
+    show:
+      program_title: 'Название учебного курса'
+      programs: 'Связанные учебные курсы'
+      question_format: 'Тип'
+      question_required: 'Обязательность'
+      question_title: 'Вопрос'
+      questions: 'Вопросы'
+  shared:
+    advanced_search:
+      button_text_submit: 'Искать'
+      button_tooltip_clear: 'Очистить'
+      button_tooltip_remove: 'Убрать'
+    certificates_table:
+      final_score: 'Средний бал'
+      issued_date: 'Дата выдачи'
+      no_certificates_yet: 'Пока что нет сертификатов'
+      serial_id: 'Серийный номер'
+      template: 'Шаблон'
+      actions: 'Действия'
+      delete: 'Удалить'
+      confirm_delete: 'Вы уверены, что хотите удалить этот сертификат?'
+    nested_certificate_template_entries:
+      template_entries_title: Элементы шаблона
+    person_brief:
+      edit_subscriptions: Редактировать подписки
+    study_application:
+      click_to_learn_more: (нажмите чтобы узнать больше)
+    versions:
+      created_at: 'Время'
+      event: 'Событие'
+      item_id: 'Идентификатор'
+      item_type: 'Тип'
+      changes: 'Изменения'
+      whodunnit: 'Автор'
+      prev_attributes: 'Было:'
+      next_attributes: 'Стало:'
+      not_enough_rights_to_display_changes: 'Не хватает прав чтобы отобразить изменения'

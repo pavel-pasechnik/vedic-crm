@@ -1,7 +1,7 @@
 import process from 'process';
 
 import * as Sentry from '@sentry/react';
-import { createRoot } from 'react-dom/client';
+import { hydrateRoot } from 'react-dom/client';
 
 import HelloReact from '../components/HelloReact';
 import '../stylesheets/application.scss';
@@ -12,6 +12,7 @@ Sentry.init({
 });
 
 const rootElement = document.getElementById('root');
-const root = createRoot(rootElement);
 
-root.render(<HelloReact />);
+if (rootElement) {
+  hydrateRoot(rootElement, <HelloReact />);
+}

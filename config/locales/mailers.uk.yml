@@ -1,0 +1,33 @@
+uk:
+  mail:
+    dear_prabhu: "Любий %{name} прабху, прийміть мої автоматичні поклони будь ласка"
+    dear_mataji: "Люба матаджи %{name}, прийміть мої автоматичні поклони будь ласка"
+    signature: "Ваш у служінні Академії, Рободас"
+    group:
+      leave:
+        subject: "Вас відраховано з групи %{group_title}"
+      join:
+        subject: "Вас зараховано до групи %{group_title}"
+    programm_applications:
+      submitted:
+        subject: "Новий студент подав заяву: %{name}"
+    footer:
+      kdask: 'Київська духовна академія свідомості Крішни'
+  schedules_notifier_mailer:
+    next_day:
+      academic_groups: 'Групи'
+      check_your_schedule: 'Подивіться свій розклад більш детально'
+      class_subject: 'Тема'
+      classroom: 'Аудиторія'
+      course: 'Предмет'
+      questions_to_administrators: 'Всі питання можна задати адміністраторам груп:'
+      student_header: 'Ви навчаєтесь на таких заняттях'
+      subject: 'Ваш розклад на завтра'
+      teacher_header: 'Ви викладеєте такі заняття'
+      teacher: 'Лектор'
+      time: 'Час'
+      unsubscribe: Відписатися від оновлень розкладу
+  program_applications_reminder_mailer:
+    manager_remind:
+      subject: 'Необроблені заявки на навчання'
+      instructions: 'Ви отримали цього листа, тому що Ви адмністратор нижчевказанних учбових програм. Будь ласка, або розподіліть цих людей по групах, або відкличте іх заявки.'

@@ -1,0 +1,26 @@
+uk:
+  flash:
+    actions:
+      create:
+        success: "%{resource_name} був успішно створений."
+      update:
+        success: "%{resource_name} був успішно оновлений."
+      destroy:
+        success: "%{resource_name} був успішно видалений."
+        alert: "%{resource_name} не вдалося видалити."
+    examinations:
+      create:
+        success: "%{resource_name} була успішно створена."
+      update:
+        success: "%{resource_name} була успішно оновлена."
+      destroy:
+        success: "%{resource_name} була успішно видалена."
+        alert: "%{resource_name} не була видалена"
+    academic_groups:
+      create:
+        success_html: "%{resource_name} %{link_or_name} була успішно створена."
+      update:
+        success_html: "%{resource_name} %{link_or_name} була успішно оновлена."
+      destroy:
+        success: "%{resource_name} була успішно видалена."
+        alert: "%{resource_name} не була видалена"

@@ -1,0 +1,56 @@
+uk:
+  simple_form:
+    "yes": 'Так'
+    "no": 'Ні'
+    required:
+      text: "обов'язково"
+      mark: '*'
+    error_notification:
+      default_message: 'Виправте ці помилки будь ласка:'
+    options:
+      person:
+        gender:
+          male:   'Чоловіча'
+          female: 'Жіноча'
+      program:
+        visible:
+          visible: 'Так'
+          invisible: 'Невидимий'
+    labels:
+      certificate_template:
+        background: 'Базове зображення'
+        title:      'Назва'
+      person:
+        birthday:               'День народження'
+        current_password:       'Поточний пароль'
+        diploma_name:           "Ім'я для друку на дипломах та сертифікатах (залиште пустим, якщо відповідає імені та призвищу)"
+        email:                  'Електронна пошта'
+        gender:                 'Стать'
+        middle_name:            'По батькові'
+        name:                   "Ім'я"
+        notify_schedules:       'Мій розклад'
+        password_confirmation:  'Підтвердження паролю'
+        password:               'Пароль'
+        phone:                  'Телефон'
+        photo:                  'Фотографія на студентський квиток'
+        surname:                'Прізвище'
+    placeholders:
+      person:
+        email:                  'test@example.com'
+        name:                   'Антон'
+        middle_name:            'Іванович'
+        surname:                'Петренко'
+        birthday:               '31.02.1980'
+        new:
+          password:               '******'
+          password_confirmation:  '******'
+    hints:
+      certificate_template:
+        background: 'Дозволено тільки .png файли'
+      person:
+        edit:
+          birthday:           'В Академії можна навчатися тільки з 16 років'
+          password:           'Залиште пустим, якщо не хочете змінювати'
+          current_password:   'Введіть Ваш поточний пароль, щоб підтвердити зміни'
+        new:
+          birthday:           'В Академії можна навчатися тільки з 16 років'

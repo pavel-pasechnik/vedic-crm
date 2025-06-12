@@ -1,0 +1,171 @@
+uk:
+  activerecord:
+    attributes:
+      academic_group:
+        administrator: 'Координатор'
+        courses: 'Предмети'
+        curator: 'Куратор'
+        establ_date: 'Дата створення'
+        graduated_at: 'Дата закінчення'
+        group_description: 'Опис групи'
+        message_ru: "Об'ява для групи (російською)"
+        message_uk: "Об'ява для групи (українською)"
+        praepostor: 'Староста'
+        title: 'Назва'
+      certificate_template:
+        file: 'PDF шаблон'
+        institution: 'Учбовий заклад що видає'
+        program_type: 'Тип програми'
+        is_final_score_required: 'Середній бал обовʼязковий'
+
+        title: 'Назва'
+      certificate_template_entries:
+        align: 'Вирівнювання елементу шаблону'
+        certificate_template_font: 'Шрифт елементу шаблону'
+        color: 'Колір елементу шаблону'
+        character_spacing: 'Міжсимвольний інтервал елементу шаблону'
+        font_size: 'Розмір шрифту елементу шаблону'
+        template: 'Текст елементу шаблону'
+        x: 'X позиція елементу шаблону'
+        y: 'Y позиція шаблону'
+      certificate_template_entry:
+        align: 'Вирівнювання'
+        certificate_template_font: 'Шрифт'
+        color: 'Колір'
+        character_spacing: 'Міжсимвольний інтервал'
+        font_size: 'Розмір шрифту'
+        template: 'Текст елементу'
+      certificate_template_font:
+        name: "Ім'я"
+        file: 'Файл'
+      certificate_template_images:
+        angle: 'Кут'
+        scale: 'Масштаб'
+        signature: 'Підпис'
+      certificate_template_image:
+        angle: 'Кут'
+        scale: 'Масштаб'
+        signature: 'Підпис'
+      course:
+        title: 'Назва'
+        description: 'Опис'
+        variant: 'Варіант'
+        teacher_profiles: 'Викладачі'
+      examination:
+        description:    'Опис'
+        max_result:     'Максимальний бал'
+        min_result:     'Мінімальний бал'
+        passing_score:  'Прохідний бал'
+        title:          'Назва'
+      person:
+        birthday:               'День народження'
+        current_password:       'Поточний пароль'
+        diploma_name:           "І'мя для диплому"
+        email:                  'Електронна пошта'
+        gender:                 'Стать'
+        middle_name:            'По батькові'
+        name:                   "Ім'я"
+        password_confirmation:  'Підтвердження'
+        password:               'Пароль'
+        photo:                  'Фотографія'
+        privacy_agreement:      'Згода на обробку персональних даних'
+        surname:                'Прізвище'
+      program:
+        title_uk: 'Назва українською'
+        title_ru: 'Назва російською'
+        description_uk: 'Опис українською'
+        description_ru: 'Опис російською'
+        visible: 'Видимість студентам'
+        position: 'Позиція для сортування'
+        manager: 'Адміністратор курсу'
+        questionnaires: 'Опитувальники'
+      signature:
+        name: "Ім'я"
+        file: 'Файл'
+      telephones:
+        phone:    'Телефонний номер'
+      questions/answers:
+        data:             'Відповідь'
+    models:
+      academic_group: 'Група'
+      certificate_template_entry: 'Елемент шаблону сертифікату'
+      certificate_template_font: 'Шрифт шаблону сертифікату'
+      certificate_template: 'Шаблон сертифікату'
+      course: 'Предмет'
+      examination: 'Залікова робота'
+      program: 'Учбовий курс'
+      signature: 'Підпис'
+    errors:
+      models:
+        academic_group:
+          attributes:
+            title:
+              blank: 'не може бути пустою'
+        answer:
+          attributes:
+            data:
+              blank:  'не може бути пустою'
+        certificate_template:
+          attributes:
+            title:
+              blank: 'не може бути пустою'
+        certificate_template_entry:
+          attributes:
+            x:
+              blank: 'не може бути пустою'
+            y:
+              blank: 'не може бути пустою'
+        class_schedule:
+          wrong_times:   'тривалість повинна бути менше доби і хоча б 10 хвилин'
+          attributes:
+            academic_groups:
+              availability: '%{groups} недоступні на цей час'
+            classroom:
+              roominess:    'вміщує %{actual}, а %{required} студентів не помістяться'
+              availability: 'недоступна на цей час'
+            teacher_profile:
+              availability: 'недоступний на цей час'
+        course:
+          attributes:
+            title:
+              blank: 'не може бути пустою'
+        examination:
+          attributes:
+            title:
+              blank:  'не може бути пуста'
+            passing_score:
+              inclusion:  'повинний бути між мінімальним та максимальним балами'
+        person:
+          blank:      'повинно бути заповнено'
+          too_long:   'занадто довге (максимум %{count} символів)'
+          attributes:
+            birthday:
+              over_16_years_old:    'вибачте Вам повинно виконатися 16 повних років'
+            current_password:
+              blank:                'повинен бути заповненим'
+              invalid:              'не вірний'
+            email:
+              blank:                'повинна бути заповнена'
+              invalid:              'повинна відповідати формату «pryklad@example.com»'
+              taken:                'зайнята. Можливо Ви вже зареєстровані, спробуйте <a class="alert-link" href="/password/new">відновити пароль</a>'
+            gender:
+              inclusion:            'повинна бути обрана'
+            password:
+              too_long:             'занадто довигий (максимум %{count} символів)'
+              too_short:            'занадто короткий (мінімум %{count} символів)'
+            password_confirmation:
+              confirmation:         'повинно бути таким самим як і пароль'
+            photo:
+              size:                 'повинна бути не меньше 150*200 пікселів'
+            privacy_agreement:
+              accepted:             'повинна бути прийнята'
+        program:
+          attributes:
+            title_uk:
+              blank: 'не може бути пустою'
+            title_ru:
+              blank: 'не може бути пустою'
+            manager:
+              blank: 'повинен бути обраний'
+        telephone:
+          invalid:  'повинен бути вірний'

@@ -1,0 +1,56 @@
+ru:
+  simple_form:
+    "yes": 'Да'
+    "no": 'Нет'
+    required:
+      text: 'обязательно'
+      mark: '*'
+    error_notification:
+      default_message: 'Исправьте эти ошибки, побалуйста:'
+    options:
+      person:
+        gender:
+          male:   'Мужской'
+          female: 'Женский'
+      program:
+        visible:
+          visible: 'Да'
+          invisible: 'Не видимый'
+    labels:
+      certificate_template:
+        background: 'Базовое изображение'
+        title:      'Название'
+      person:
+        birthday:               'День рождения'
+        current_password:       'Текущий пароль'
+        diploma_name:           'Имя для печати на дипломах и сертификатах на украинском (оставьте пустым, если совпадает с именем и фамилией)'
+        email:                  'Электронная почта'
+        gender:                 'Пол'
+        middle_name:            'Отчество'
+        name:                   'Имя'
+        notify_schedules:       'Мое расписание'
+        password_confirmation:  'Подтверждение пароля'
+        password:               'Пароль'
+        phone:                  'Телефон'
+        photo:                  'Фотография на студенческий билет'
+        surname:                'Фамилия'
+    placeholders:
+      person:
+        email:                  'test@example.com'
+        name:                   'Антон'
+        middle_name:            'Иванович'
+        surname:                'Петренко'
+        birthday:               '31.02.1980'
+        new:
+          password:               '******'
+          password_confirmation:  '******'
+    hints:
+      certificate_template:
+        background: 'Разрешены только .png файлы'
+      person:
+        edit:
+          birthday:           'В Акадении могут учиться только с 16 лет'
+          password:           'Оставьте пустым, если не хотите менять'
+          current_password:   'Введите Ваш текущий пароль, чтобы подтвердить изменения'
+        new:
+          birthday:           'В Акадении могут учиться только с 16 лет'

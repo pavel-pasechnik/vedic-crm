@@ -1,0 +1,4 @@
+uk:
+  errors:
+    messages:
+      not_email: 'невірний формат'
