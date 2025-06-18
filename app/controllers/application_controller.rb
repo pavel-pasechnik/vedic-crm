@@ -3,8 +3,9 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
-  before_action :set_paper_trail_whodunnit, :set_raven_context
+  before_action :set_paper_trail_whodunnit, :set_sentry_context
   before_action :set_locale, :authenticate_person!
+  skip_before_action :verify_authenticity_token, if: -> { request.format.json? }
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
@@ -32,8 +33,11 @@ class ApplicationController < ActionController::Base
     render json: klass.new(user: current_person, params: params, resource: resource)
   end
 
-  def set_raven_context
-    Raven.user_context(id: user_for_paper_trail)
-    Raven.extra_context(params: params.to_unsafe_h, url: request.url)
+  def set_sentry_context
+  return unless Sentry.initialized?
+
+  Sentry.set_user(id: user_for_paper_trail)
+  Sentry.set_context("params", params.to_unsafe_h)
+  Sentry.set_tags(url: request.url)
   end
 end

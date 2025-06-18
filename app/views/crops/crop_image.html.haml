@@ -1,7 +1,8 @@
 - content_for(:js_and_css) do
-  = stylesheet_link_tag 'Jcrop.min', media: 'all'
-  = javascript_include_tag 'Jcrop.min', type: 'text/javascript'
-  = javascript_include_tag 'crops', type: 'text/javascript'
+  = stylesheet_link_tag "Jcrop.min", media: "all"
+  = vite_client_tag
+  = vite_javascript_tag "Jcrop.min", type: "text/javascript"
+  = vite_javascript_tag "crops", type: "text/javascript"
 
 .row
   .col-xs-12

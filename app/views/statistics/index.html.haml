@@ -1,8 +1,9 @@
 - provide(:title, @academic_group.title)
 - content_for(:js_and_css) do
   = stylesheet_link_tag "//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css", media: "all"
-  = javascript_include_tag "//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js", type: "text/javascript"
-  = javascript_include_tag "//cdn.jsdelivr.net/npm/chartist-plugin-pointlabels@0.0.6/dist/chartist-plugin-pointlabels.min.js", type: "text/javascript"
+  = vite_client_tag
+  = vite_javascript_tag "//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js", type: "text/javascript"
+  = vite_javascript_tag "//cdn.jsdelivr.net/npm/chartist-plugin-pointlabels@0.0.6/dist/chartist-plugin-pointlabels.min.js", type: "text/javascript"
 
 .row
   .col-xs-12

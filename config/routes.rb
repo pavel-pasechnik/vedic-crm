@@ -18,15 +18,9 @@ Rails.application.routes.draw do
   #  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
 
-  devise_for :people,
-    path: "",
-    controllers: {
-      registrations: "users/registrations",
-      sessions: "people/sessions",
-      omniauth_callbacks: "people/omniauth_callbacks"
-    },
-    path_names: { sign_up: "register" }
-
+  devise_for :people, controllers: {
+  omniauth_callbacks: "people/omniauth_callbacks"
+}
 
   authenticate :person, ->(p) { p.can_act?("sidekiq:admin") } do
     mount Sidekiq::Web => "/sidekiq"

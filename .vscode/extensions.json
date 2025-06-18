@@ -1,0 +1,22 @@
+{
+  "recommendations": [
+    "Shopify.ruby-lsp",
+    "manuelpuyol.erb-linter",
+    "stylelint.vscode-stylelint",
+    "dbaeumer.vscode-eslint",
+    "wilfison.haml-all",
+    "bung87.vscode-gemfile",
+    "kaiwood.endwise",
+    "streetsidesoftware.code-spell-checker",
+    "streetsidesoftware.code-spell-checker-russian",
+    "streetsidesoftware.code-spell-checker-ukrainian",
+    "oderwat.indent-rainbow",
+    "esbenp.prettier-vscode",
+    "usernamehw.errorlens",
+    "kamikillerto.vscode-colorize",
+    "ionutvmi.path-autocomplete",
+    "christian-kohler.npm-intellisense",
+    "github.vscode-github-actions",
+    "xyz.local-history"
+  ]
+}

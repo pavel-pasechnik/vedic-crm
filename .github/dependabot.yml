@@ -1,12 +1,69 @@
-version: 2
-updates:
-  - package-ecosystem: bundler
-    directory: '/'
-    schedule:
-      interval: daily
-    open-pull-requests-limit: 10
-  - package-ecosystem: github-actions
-    directory: '/'
-    schedule:
-      interval: daily
-    open-pull-requests-limit: 10
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  autofix:
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        fixer: [rubocop, erblint, hamllint, eslint, stylelint]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Restore Ruby gems
+        uses: actions/cache@v3
+        with:
+          path: vendor/bundle
+          key: ruby-${{ runner.os }}-${{ hashFiles('**/Gemfile.lock') }}
+
+      - name: Restore Node modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: node-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Run AutoFix
+        run: |
+          case ${{ matrix.fixer }} in
+            rubocop) bin/rubocop -A ;;
+            erblint) bin/erblint --lint-all --autocorrect ;;
+            hamllint) bin/haml-lint --auto-correct ;;
+            eslint) npx eslint . --fix ;;
+            stylelint) npx stylelint "**/*.{css,scss}" --fix ;;
+          esac
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Autofix: ${{ matrix.fixer }}" || echo "No changes"
+          git push

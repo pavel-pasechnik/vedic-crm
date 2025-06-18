@@ -1,7 +1,8 @@
 .row.vert-offset-top-1
   .col-xs-12
     - content_for(:js_and_css) do
-      = javascript_include_tag "generated/group-performance-bundle", type: "text/javascript"
+      = vite_client_tag
+      = vite_javascript_tag "generated/group-performance-bundle", type: "text/javascript"
       = stylesheet_link_tag "range-slider", media: "all"
 
     = react_component("GroupPerformanceApp", props: { people: people,

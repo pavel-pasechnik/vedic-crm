@@ -1,0 +1,20 @@
+// This file loads Bootstrap by importing components explicitly instead of doing `@import 'bootstrap';`
+// Doing so allows for customization of exactly which components are imported.
+// The components themselves are made available via bootstrap-sass (https://github.com/twbs/bootstrap-sass#sass)
+
+// IMPORTANT: Make sure to keep the customizations defined in this file
+//            in-sync with the ones defined in client/bootstrap-sass.config.js.
+
+// For a reference on customizations,refer to:
+//  https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/_bootstrap.scss
+
+// If you are looking to merely change bootstrap variables from their default,
+// you should instead declare them in client/assets/stylesheets/_post-bootstrap.scss
+
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/grid';
+@import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/forms';
+@import 'bootstrap/scss/utilities';

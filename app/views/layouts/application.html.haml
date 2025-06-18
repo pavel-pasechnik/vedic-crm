@@ -1,16 +1,17 @@
 !!! 5
 %html{ lang: locale }
   %head
-    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1' }
-    %meta{ name: 'theme-color', content: '#222' }
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1" }
+    %meta{ name: "theme-color", content: "#222" }
 
-    - unless params[:action] == 'privacy_agreement'
-      %meta{ name: 'robots', content: 'noindex, nofollow' }
+    - unless params[:action] == "privacy_agreement"
+      %meta{ name: "robots", content: "noindex, nofollow" }
 
     = csrf_meta_tags
 
     - if Rails.env.production?
-      = javascript_include_tag "sentry-raven", type: "text/javascript", async: true
+      = vite_client_tag
+      = vite_javascript_tag "sentry-raven", type: "text/javascript", async: true
 
       %script{ src: "https://www.googletagmanager.com/gtag/js?id=UA-108797911-1", async: true, type: "text/javascript" }
 
@@ -23,9 +24,10 @@
     %title
       = full_title(yield(:title))
 
-    = stylesheet_link_tag "application", media: "all"
-    = vite_client_tag
-    = vite_javascript_tag 'application'
+
+    = vite_stylesheet_tag 'application.scss'
+
+    = vite_javascript_tag "application.jsx"
 
     - if content_for?(:js_and_css)
       = yield(:js_and_css)

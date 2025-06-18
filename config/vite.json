@@ -1,7 +1,13 @@
 {
   "all": {
-    "sourceCodeDir": "app/javascript",
-    "watchAdditionalPaths": []
+    "sourceCodeDir": "app/frontend",
+    "watchAdditionalPaths": [],
+    "additionalEntrypoints": [
+      "entrypoints/application.jsx",
+      "entrypoints/application.scss",
+      "entrypoints/react-bundle.jsx",
+      "entrypoints/schedule-list-bundle.jsx"
+    ]
   },
   "development": {
     "autoBuild": true,

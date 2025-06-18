@@ -1,0 +1,11 @@
+.create-event {
+  @extend .text-success;
+}
+
+.update-event {
+  @extend .text-warning;
+}
+
+.destroy-event {
+  @extend .text-danger;
+}

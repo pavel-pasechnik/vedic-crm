@@ -1,7 +1,8 @@
-FROM postgres:9.5.25
+FROM postgres:17.5-alpine3.22
 
 LABEL maintainer="Maksym Pugach <pugach.m@gmail.com>"
 
-RUN localedef -i uk_UA -c -f UTF-8 -A /usr/share/locale/locale.alias uk_UA.UTF-8
+RUN apk add --no-cache libc6-compat
+ENV LANG=uk_UA.UTF-8
 
-ENV LANG uk_UA.utf8
+COPY ./postgres_ua/postgresql.conf /etc/postgresql/postgresql.conf

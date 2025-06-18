@@ -16,7 +16,7 @@
                             class: 'group-status'
 
             %label{ for: 'active-agroups' }
-              = t('defaults.links.active_groups')
+              = t("defaults.links.active_groups")
               %span.caret
 
             %ul
@@ -26,20 +26,20 @@
 
     = generate_menu_group(:person, :people, :'fa-users', skip_list: true) do
       - capture_haml do
-        - if current_person.can_act?('person:index')
+        - if current_person.can_act?("person:index")
           %li
-            = link_to t('defaults.links.people_list'), people_path, class: active_class(people_path)
+            = link_to t("defaults.links.people_list"), people_path, class: active_class(people_path)
           %li
             - path = people_path(without_application: true)
-            = link_to t('defaults.links.people_without_applications'), path, class: active_class(path)
+            = link_to t("defaults.links.people_without_applications"), path, class: active_class(path)
 
     = generated_sidebar_menu
 
     = generate_menu_group(:certificate_template, :certificate_templates, :'fa-certificate') do
       - capture_haml do
-        - if current_person.can_act?('certificate_template_font:index')
+        - if current_person.can_act?("certificate_template_font:index")
           %li
-            = link_to t('defaults.links.certificate_template_fonts_list'), certificate_template_fonts_path, class: active_class(certificate_template_fonts_path)
+            = link_to t("defaults.links.certificate_template_fonts_list"), certificate_template_fonts_path, class: active_class(certificate_template_fonts_path)
         - if current_person.can_act?("signature:index")
           %li
             = link_to t("defaults.links.signatures_list"), signatures_path, class: active_class(signatures_path)

@@ -1,13 +1,16 @@
-
 services:
   db:
     container_name: db
-    image: postgres:17.5-alpine
+    restart: unless-stopped
+    build:
+      context: docker
+      dockerfile: postgres_ua/Dockerfile
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     volumes:
       - db_data:/var/lib/postgresql/data
+    command: ["postgres", "-c", "config_file=/etc/postgresql/postgresql.conf"]
     ports:
       - "5432:5432"
 
@@ -42,9 +45,9 @@ services:
         # Create/migrate base
         bundle exec rails db:create db:migrate
 
-        # Running Vite Dev Server on 0.0.0.0.0:5173.
+        # Running Vite Dev Server on 0.0.0.0.0:3036.
         # --host 0.0.0.0 makes the server available from the container
-        bin/vite dev --host 0.0.0.0 &
+        bin/vite dev --host 0.0.0.0
 
         # And then we launch Puma right away
         bundle exec puma -C config/puma.rb
@@ -54,7 +57,7 @@ services:
     working_dir: /app
     ports:
       - "3000:3000"    # Rails
-      - "5173:5173"    # Vite Dev Server
+      - "3036:3036"    # Vite Dev Server
     environment:
       RAILS_ENV: development
       DATABASE_HOST: db

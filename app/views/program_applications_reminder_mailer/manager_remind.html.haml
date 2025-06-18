@@ -26,16 +26,16 @@
             %p= t('.instructions')
 
         %tr
-          %td{ align: 'center', valign: 'top' }
-            %table{ border: 0, cellpadding: 10, cellspacing: 0, width: '100%', id: 'emailBody' }
+          %td{ align: "center", valign: "top" }
+            %table{ border: 0, cellpadding: 10, cellspacing: 0, width: "100%", id: "emailBody" }
               - @programs.each do |program|
                 %tr
-                  %td{ align: 'left', valign: 'baseline' }
-                    %h3= link_to program["title_#{@manager.locale}"], people_url(with_application: program.id, utm_medium: 'email', utm_source: 'manager_remind', utm_campaign: 'program_applications_reminder', utm_content: 'program_title')
+                  %td{ align: "left", valign: "baseline" }
+                    %h3= link_to program["title_#{@manager.locale}"], people_url(with_application: program.id, utm_medium: "email", utm_source: "manager_remind", utm_campaign: "program_applications_reminder", utm_content: "program_title")
 
                 %tr
-                  %td{ align: 'left', valign: 'top' }
-                    %table{ border: 0, cellpadding: 10, cellspacing: 0, width: '100%', id: "application-#{program.id}" }
+                  %td{ align: "left", valign: "top" }
+                    %table{ border: 0, cellpadding: 10, cellspacing: 0, width: "100%", id: "application-#{program.id}" }
                       - program.study_applications.each do |application|
                         %tr
                           %td{ align: "left", valign: "baseline" }

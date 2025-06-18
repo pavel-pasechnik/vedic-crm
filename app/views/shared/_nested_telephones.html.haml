@@ -1,6 +1,7 @@
 - content_for(:js_and_css) do
   = stylesheet_link_tag "intl-tel-input/build/css/intlTelInput", media: "all"
-  = javascript_include_tag "nested_form_custom_telephones", type: "text/javascript"
+  = vite_client_tag
+  = vite_javascript_tag "nested_form_custom_telephones", type: "text/javascript"
 
 .row
   .col-xs-12#nested-telephones

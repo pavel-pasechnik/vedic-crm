@@ -104,23 +104,23 @@
                               %br
               %tr
                 %td{ align: 'center', valign: 'top' }
-                  = link_to t('.check_your_schedule'),
-                            root_url( utm_medium: 'email',
-                                      utm_source: 'next_day_schedule',
-                                      utm_campaign: 'schedules_notification',
-                                      utm_content: 'call_to_action')
+                  = link_to t(".check_your_schedule"),
+                            root_url(utm_medium: "email",
+                                      utm_source: "next_day_schedule",
+                                      utm_campaign: "schedules_notification",
+                                      utm_content: "call_to_action")
 
               %tr
-                %td{ align: 'left', valign: 'bottom' }
-                  = t('.questions_to_administrators')
+                %td{ align: "left", valign: "bottom" }
+                  = t(".questions_to_administrators")
 
-                  %table{ border: 0, cellpadding: 10, cellspacing: 0, width: '100%', id: 'administrators' }
+                  %table{ border: 0, cellpadding: 10, cellspacing: 0, width: "100%", id: "administrators" }
                     - @administrators.each do |administrator, academic_groups|
                       %tr
-                        %td{ align: 'left', valign: 'top' }
+                        %td{ align: "left", valign: "top" }
                           = complex_name(administrator, short: true)
 
-                        %td{ align: 'left', valign: 'top' }
+                        %td{ align: "left", valign: "top" }
                           - administrator.telephones.each do |telephone|
                             = telephone.phone
                             %br

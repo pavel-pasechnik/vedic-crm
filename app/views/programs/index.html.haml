@@ -1,10 +1,10 @@
-- provide(:title, t('.title'))
+- provide(:title, t(".title"))
 
 .row
   .col-xs-12
-    %h1.text-center=t('.title')
+    %h1.text-center=t(".title")
 
-  - if current_person.can_act?('program:new')
+  - if current_person.can_act?("program:new")
     .col-xs-12.col-sm-10.col-sm-offset-1.vert-offset-top-1.vert-offset-bottom-1.text-right
       = link_to_new(true, new_program_path)
 

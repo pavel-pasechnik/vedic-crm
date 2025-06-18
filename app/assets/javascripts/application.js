@@ -4,7 +4,7 @@
 // CRITICAL that generated/vendor-bundle must be BEFORE bootstrap-sprockets and turbolinks
 // since it is exposing jQuery and jQuery-ujs
 
-//= require generated/vendor-bundle
+// = require generated/vendor-bundle
 
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
@@ -19,17 +19,17 @@
 // about supported directives.
 //
 
-//= require jquery_nested_form
+// = require jquery_nested_form
 
 // bootstrap-sprockets depends on generated/vendor-bundle for jQuery.
-//= require bootstrap-sprockets
+// = require bootstrap-sprockets
 
-//= require jquery-ui/widgets/autocomplete
-//= require select_2_initializers
-//= require moment
-//= require moment/ru
-//= require moment/uk
-//= require custom
-//= require stop_double_submit
-//= require change_academic_group
-//= require sidebar
+// = require jquery-ui/widgets/autocomplete
+// = require select_2_initializers
+// = require moment
+// = require moment/ru
+// = require moment/uk
+// = require custom
+// = require stop_double_submit
+// = require change_academic_group
+// = require sidebar

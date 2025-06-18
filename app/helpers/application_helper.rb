@@ -74,8 +74,8 @@ module ApplicationHelper
 
   def select2_scripts_and_stylesheets
     content_tag(:div, class: "select2-dependencies") do
-      concat(javascript_include_tag("select2/dist/js/select2.min", type: "text/javascript"))
-      concat(javascript_include_tag("select2/dist/js/i18n/#{locale}", type: "text/javascript"))
+      concat(vite_javascript_tag("select2/dist/js/select2.min", type: "text/javascript"))
+      concat(vite_javascript_tag("select2/dist/js/i18n/#{locale}", type: "text/javascript"))
       concat(stylesheet_link_tag("select2/dist/css/select2.min", media: "all"))
       concat(stylesheet_link_tag("select2-bootstrap-theme/dist/select2-bootstrap.min", media: "all"))
     end

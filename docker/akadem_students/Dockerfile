@@ -14,6 +14,8 @@ RUN gem install bundler -v "2.6.9"
 # 1.2. Set the working directory. All subsequent COPY/RUNs are performed relative to /app
 WORKDIR /app
 
+RUN apt-get update -qq && apt-get install --no-install-recommends -y gnupg ca-certificates
+
 # 1.3. Install the "base" packages, which will be needed by both dev and prod
 RUN apt-get update -qq && \
    apt-get install --no-install-recommends -y \
@@ -137,6 +139,10 @@ RUN bundle install
 # 5.3. Copy all the application code (working on a "fresh" local file, which will most likely still be mounted):
 COPY . .
 
+# Give permissions to the npm global modules directory (unsafe way, but it works)
+RUN mkdir -p /usr/local/lib/node_modules && \
+   chmod -R a+w /usr/local/lib/node_modules
+
 # 5.4. Install npm dependencies (if needed), but in dev mode we usually install devDependencies
 RUN npm install
 
@@ -161,6 +167,6 @@ EXPOSE 3000 5173
 # - Then start the Rails server with binding 0.0.0.0.0 so that it is accessible outside the container
 #
 CMD ["bash", "-lc", "\
-   bin/vite dev --host 0.0.0.0 & \
+   bin/vite dev & \
    bundle exec rails server -b 0.0.0.0\
    "]

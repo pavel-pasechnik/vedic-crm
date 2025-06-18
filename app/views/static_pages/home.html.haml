@@ -1,4 +1,4 @@
-- provide(:title, t('.title'))
+- provide(:title, t(".title"))
 
 .row
   .col-xs-12
@@ -12,10 +12,10 @@
           .col-xs-12.col-sm-5.col-md-4.col-lg-3
             .row
               .col-xs-12
-                = person_photo(current_person, :standart, class: 'img-thumbnail img-version-standart')
+                = person_photo(current_person, :standart, class: "img-thumbnail img-version-standart")
             .row.vert-offset-top-1.vert-offset-bottom-1
               .col-xs-12.text-muted
-                = t('.registration_id')
+                = t(".registration_id")
                 = current_person.id
 
           .col-xs-12.col-sm-7.col-md-8.col-lg-9
@@ -43,8 +43,9 @@
         = t(".schedules_title")
     .col-xs-12
       - content_for(:js_and_css) do
-        = javascript_include_tag "generated/react-bundle", type: "text/javascript"
-        = javascript_include_tag "generated/schedule-list-bundle", type: "text/javascript"
+        = vite_client_tag
+        = vite_javascript_tag "react-bundle.jsx", type: "text/javascript"
+        = vite_javascript_tag "schedule-list-bundle.jsx", type: "text/javascript"
 
       = react_component("ScheduleListApp",
         props: { url: ui_person_class_schedules_path,

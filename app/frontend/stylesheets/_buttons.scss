@@ -1,0 +1,14 @@
+.btn-dark {
+  @include button-variant($primary, $white, $primary);
+
+  &:hover,
+  &:focus {
+    background-color: $primary;
+    border-color: $primary;
+    outline: 0;
+  }
+
+  &:active {
+    outline: 0 !important;
+  }
+}
