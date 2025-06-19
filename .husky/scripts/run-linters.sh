@@ -1,18 +1,27 @@
 #!/bin/sh
 
 echo "Starting RuboCop autofix loop..."
-while ! bundle exec rubocop -A; do
-  echo "Another round of RuboCop fixes..."
+while true; do
+  bundle exec rubocop -A
+  if bundle exec rubocop | grep -q "no offenses detected"; then
+    echo "All RuboCop offenses fixed."
+    break
+  else
+    echo "Another round of RuboCop fixes..."
+  fi
 done
 
-echo "Running HAML Lint..."
-bundle exec haml-lint .
+echo "Running HAML Lint with auto-correct..."
+bundle exec haml-lint --auto-correct .
 
-echo "Running ESLint..."
-npm run lint:js || npm run lint
+echo "Running ERB Lint with auto-correct..."
+bundle exec erblint --lint-all --autocorrect
 
-echo "Running Stylelint..."
-npm run lint:css || npm run lint
+echo "Running ESLint with auto-fix..."
+npm run lint:fix
+
+echo "Running Stylelint with auto-fix..."
+npm run lint:fix
 
 echo "Staging any new changes after all linters..."
 git add .

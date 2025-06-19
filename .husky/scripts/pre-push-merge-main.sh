@@ -30,13 +30,5 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "Running RuboCop autofix loop..."
-while ! bundle exec rubocop -A; do
-  echo "Another round of fixes..."
-done
-
-echo "Staging any new changes after autofix..."
-git add .
-
 echo "Merge successful. Continuing push..."
 exit 0
