@@ -5,10 +5,20 @@
     "start": "bin/dev",
     "build": "vite build && find ./app/assets/javascripts/generated/ -type f -print0 | xargs -0 dos2unix",
     "dev": "vite",
-    "prepare": "husky install",
+
+    "lint:js": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint:js:fix": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0 --fix",
+
+    "lint:css": "stylelint \"**/*.{scss,css}\" --formatter compact",
+    "lint:css:fix": "stylelint \"**/*.{scss,css}\" --fix --formatter compact",
+
+    "lint:fix": "npm run lint:js:fix && npm run lint:css:fix",
+
     "rubocop": "bundle exec rubocop -A",
     "lint": "stylelint \"**/*.{scss,css}\" --fix --formatter compact && eslint  . --fix --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.js": "eslint --fix",
