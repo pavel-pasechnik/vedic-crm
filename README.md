@@ -12,6 +12,10 @@ Vedic CRM is a full-featured CRM system built on a modern technology stack with 
 [![Lint Status](https://img.shields.io/badge/Lint-Pass-brightgreen)](https://github.com/pavel-pasechnik/vedic-crm/actions/workflows/ci.yml)
 [![RubyCritic](https://img.shields.io/badge/RubyCritic-Enabled-blueviolet)](https://github.com/pavel-pasechnik/vedic-crm/actions/workflows/ci.yml)
 
+<!-- Code Climate Badges -->
+[![Maintainability](https://api.codeclimate.com/v1/badges/ab46818dc16b1f934d2c/maintainability)](https://codeclimate.com/github/pavel-pasechnik/vedic-crm/maintainability)
+<!-- [![Test Coverage](https://api.codeclimate.com/v1/badges/ab46818dc16b1f934d2c/test_coverage)](https://codeclimate.com/github/pavel-pasechnik/vedic-crm/test_coverage) -->
+
 ---
 
 ## 📑 Table of Contents
