@@ -18,10 +18,10 @@ echo "Running ERB Lint with auto-correct..."
 bundle exec erblint --lint-all --autocorrect
 
 echo "Running ESLint with auto-fix..."
-npm run lint:fix
+npm run lint:js:fix || npm run lint:fix
 
 echo "Running Stylelint with auto-fix..."
-npm run lint:fix
+npm run lint:css:fix || npm run lint:fix
 
 echo "Staging any new changes after all linters..."
 git add .

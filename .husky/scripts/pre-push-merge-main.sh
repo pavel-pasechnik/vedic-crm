@@ -1,19 +1,12 @@
 #!/bin/sh
 
-# Check if running in WSL
-if grep -q Microsoft /proc/version 2>/dev/null; then
-  echo "Running under WSL"
-else
-  echo "Not running under WSL"
-fi
-
-# Check if bash is available
+# Checking for bash
 if ! command -v bash > /dev/null 2>&1; then
-  echo "Error: Bash is not available. Please install Git Bash or WSL."
+  echo "Error: Bash is not available. Please install Bash."
   exit 1
 fi
 
-# Protection: if there is no remote origin
+# Origin check
 if ! git remote get-url origin > /dev/null 2>&1; then
   echo "No remote origin found. Skipping merge."
   exit 0
@@ -29,6 +22,3 @@ if [ $? -ne 0 ]; then
   echo "Merge conflict detected. Resolve conflicts before pushing."
   exit 1
 fi
-
-echo "Merge successful. Continuing push..."
-exit 0
