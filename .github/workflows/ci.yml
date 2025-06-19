@@ -60,7 +60,7 @@ jobs:
           set -e
           bin/rubocop
           bundle exec erb_lint --lint-all
-          bundle exec haml-lint app/
+          bundle exec haml-lint app/ --fail-fast --fail-level error
           npx eslint . --max-warnings=0
           npx stylelint "**/*.{css,scss}" --max-warnings=0"
 

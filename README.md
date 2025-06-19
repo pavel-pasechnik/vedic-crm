@@ -41,6 +41,7 @@ Vedic CRM is a full-featured CRM system built on a modern technology stack with 
 ![Rails](https://img.shields.io/badge/Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![Sentry](https://img.shields.io/badge/Sentry-362D59?style=for-the-badge&logo=sentry&logoColor=white)
 ![Sidekiq](https://img.shields.io/badge/Sidekiq-CC0000?style=for-the-badge&logo=ruby&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
@@ -103,6 +104,8 @@ Create configuration files based on the examples:
 ```bash
 cp config/database.yml.example config/database.yml
 cp config/credentials.yml.example config/credentials.yml
+cp .env.example .env
+# Don't forget to create .env from .env.example for proper environment variables configuration.
 ```
 
 ---
