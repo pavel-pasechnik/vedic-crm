@@ -41,4 +41,7 @@ node_modules
 *.local
 
 # VSCode Local History
-.history/
+/.history/
+
+# Vite builds
+/app/assets/javascripts/generated/*

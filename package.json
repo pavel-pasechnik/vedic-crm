@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "start": "bin/dev",
-    "build": "vite build",
+    "build": "vite build && find ./app/assets/javascripts/generated/ -type f -print0 | xargs -0 dos2unix",
     "dev": "vite",
     "prepare": "husky install",
     "rubocop": "bundle exec rubocop -A",

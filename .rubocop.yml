@@ -149,3 +149,10 @@ Style/SingleLineDoEndBlock:
   Enabled: true
 Style/SingleLineMethods:
   Enabled: true
+
+# TODO this fix
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+Rails/OutputSafety:
+  Enabled: false

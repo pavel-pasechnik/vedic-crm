@@ -69,7 +69,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        scanner: [brakeman, importmap]
+        scanner: [brakeman]
     steps:
       - name: Setup workspace
         uses: actions/checkout@v4

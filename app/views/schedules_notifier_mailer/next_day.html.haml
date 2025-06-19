@@ -73,32 +73,32 @@
                       %table{ border: 1, cellpadding: 10, cellspacing: 0, width: '100%', id: 'schedulesList' }
 
                         %tr
-                          %th{ align: 'center', valign: 'middle' }= t('.time')
-                          %th{ align: 'center', valign: 'middle' }= t('.classroom')
-                          %th{ align: 'center', valign: 'middle' }= t('.course')
-                          %th{ align: 'center', valign: 'middle' }= t('.teacher')
-                          %th{ align: 'center', valign: 'middle' }= t('.class_subject')
-                          %th{ align: 'center', valign: 'middle' }= t('.academic_groups')
+                          %th{ align: 'center', valign: 'middle' }= t(".time")
+                          %th{ align: "center", valign: "middle" }= t(".classroom")
+                          %th{ align: "center", valign: "middle" }= t(".course")
+                          %th{ align: "center", valign: "middle" }= t(".teacher")
+                          %th{ align: "center", valign: "middle" }= t(".class_subject")
+                          %th{ align: "center", valign: "middle" }= t(".academic_groups")
 
                         %tr
-                          %td{ align: 'center', valign: 'middle' }
-                            = schedule.start_time.strftime('%H:%M')
+                          %td{ align: "center", valign: "middle" }
+                            = schedule.start_time.strftime("%H:%M")
                             &mdash;
-                            = schedule.finish_time.strftime('%H:%M')
+                            = schedule.finish_time.strftime("%H:%M")
 
-                          %td{ align: 'center', valign: 'middle' }
+                          %td{ align: "center", valign: "middle" }
                             = schedule.classroom.title
 
-                          %td{ align: 'center', valign: 'middle' }
+                          %td{ align: "center", valign: "middle" }
                             = schedule.course.title
 
-                          %td{ align: 'center', valign: 'middle' }
+                          %td{ align: "center", valign: "middle" }
                             = complex_name(schedule.teacher, short: true) if schedule.teacher.present?
 
-                          %td{ align: 'center', valign: 'middle' }
+                          %td{ align: "center", valign: "middle" }
                             = schedule.subject
 
-                          %td{ align: 'center', valign: 'middle' }
+                          %td{ align: "center", valign: "middle" }
                             - schedule.academic_groups.each do |g|
                               = g.title
                               %br

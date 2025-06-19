@@ -5,24 +5,24 @@
     font-family:'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
   }
 
-%table{ border: 0, cellpadding: 0, cellspacing: 0, height: '100%', width: '100%', id: 'bodyTable' }
+%table{ border: 0, cellpadding: 0, cellspacing: 0, height: "100%", width: "100%", id: "bodyTable" }
   %tr
-    %td{ align: 'center', valign: 'top' }
-      %table{ border: 0, cellpadding: 10, cellspacing: 0, width: 600, id: 'emailContainer' }
+    %td{ align: "center", valign: "top" }
+      %table{ border: 0, cellpadding: 10, cellspacing: 0, width: 600, id: "emailContainer" }
 
         %tr
-          %td{ align: 'center', valign: 'top' }
-            %table{ border: 0, cellpadding: 10, cellspacing: 0, width: '100%', id: 'emailHeader' }
+          %td{ align: "center", valign: "top" }
+            %table{ border: 0, cellpadding: 10, cellspacing: 0, width: "100%", id: "emailHeader" }
               %tr
-                %td{ align: 'center', valign: 'top' }
-                  %h1= t('.subject')
+                %td{ align: "center", valign: "top" }
+                  %h1= t(".subject")
 
         %tr
-          %td{ align: 'left', valign: 'baseline' }
-            %p= t(@manager.gender ? 'mail.dear_prabhu' : 'mail.dear_mataji', name: @manager.name)
+          %td{ align: "left", valign: "baseline" }
+            %p= t(@manager.gender ? "mail.dear_prabhu" : "mail.dear_mataji", name: @manager.name)
 
         %tr
-          %td{ align: 'left', valign: 'baseline' }
+          %td{ align: "left", valign: "baseline" }
             %p= t(".instructions")
 
         %tr
