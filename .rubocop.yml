@@ -149,6 +149,8 @@ Style/SingleLineDoEndBlock:
   Enabled: true
 Style/SingleLineMethods:
   Enabled: true
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
 
 # TODO this fix
 Rails/I18nLocaleTexts:

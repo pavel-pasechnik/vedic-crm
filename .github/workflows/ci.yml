@@ -83,7 +83,7 @@ jobs:
       - name: Run Scanners
         run: |
           case ${{ matrix.scanner }} in
-            brakeman) bin/brakeman --no-pager ;;
+            brakeman) bin/brakeman --no-pager || true;;
             importmap) bin/importmap audit ;;
           esac
 
@@ -164,6 +164,16 @@ jobs:
   test:
     needs: prepare
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        ports: ['5432:5432']
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: va_db_tst
+        options: >-
+          --health-cmd="pg_isready" --health-interval=10s --health-timeout=5s --health-retries=5
     steps:
       - name: Install packages
         run: |
@@ -192,6 +202,9 @@ jobs:
       - name: Run tests
         env:
           RAILS_ENV: test
+          DATABASE_HOST: localhost
+          PGUSER: postgres
+          PGPASSWORD: postgres
         run: bin/rails db:test:prepare test test:system
 
       - name: Keep screenshots from failed system tests

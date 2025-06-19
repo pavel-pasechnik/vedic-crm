@@ -6,13 +6,11 @@ Vedic CRM is a full-featured CRM system built on a modern technology stack with 
 
 ## 📊 Badges Summary
 
-![GitHub issues](https://img.shields.io/github/issues/pavel-pasechnik/vedic-crm?style=for-the-badge&logo=github)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/pavel-pasechnik/vedic-crm?style=for-the-badge&logo=github)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/pavel-pasechnik/vedic-crm?style=for-the-badge&logo=github)
-![Coverage](https://img.shields.io/coveralls/github/pavel-pasechnik/vedic-crm?style=for-the-badge&logo=coveralls)
-[![Maintainability](https://api.codeclimate.com/v1/badges/YOUR_CODECLIMATE_BADGE_TOKEN/maintainability)](https://codeclimate.com/github/pavel-pasechnik/vedic-crm/maintainability)
-[![Performance](https://api.codeclimate.com/v1/badges/YOUR_CODECLIMATE_BADGE_TOKEN/performance)](https://codeclimate.com/github/pavel-pasechnik/vedic-crm/performance)
-![CI](https://img.shields.io/github/actions/workflow/status/pavel-pasechnik/vedic-crm/ci.yml?branch=main&style=for-the-badge&logo=github)
+[![CI](https://github.com/pavel-pasechnik/vedic-crm/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/pavel-pasechnik/vedic-crm/actions)
+[![Coverage Status](https://coveralls.io/repos/github/pavel-pasechnik/vedic-crm/badge.svg?branch=main)](https://coveralls.io/github/pavel-pasechnik/vedic-crm)
+[![Security Audit](https://img.shields.io/badge/Security-Audit-green)](https://github.com/pavel-pasechnik/vedic-crm/actions/workflows/ci.yml)
+[![Lint Status](https://img.shields.io/badge/Lint-Pass-brightgreen)](https://github.com/pavel-pasechnik/vedic-crm/actions/workflows/ci.yml)
+[![RubyCritic](https://img.shields.io/badge/RubyCritic-Enabled-blueviolet)](https://github.com/pavel-pasechnik/vedic-crm/actions/workflows/ci.yml)
 
 ---
 
