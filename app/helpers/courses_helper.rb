@@ -4,7 +4,7 @@ module CoursesHelper
       policy(course).destroy?,
       course.class_schedules_count.positive? || course.examination_results_count.positive?,
       course_path(course),
-      t("courses.destroy.prerequisites_are_not_met")
+      t('courses.destroy.prerequisites_are_not_met')
     )
   end
 
@@ -14,7 +14,7 @@ module CoursesHelper
       examination.examination_results_count.positive?,
       course_examination_path(examination.course_id, examination),
       t(
-        "examinations.destroy.remove_examination_results_first",
+        'examinations.destroy.remove_examination_results_first',
         examination_results_count: examination.examination_results_count
       )
     )

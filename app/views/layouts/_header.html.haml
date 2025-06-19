@@ -1,8 +1,8 @@
-%header.navbar.navbar-inverse.navbar-fixed-top{ role: "navigation" }
+%header.navbar.navbar-inverse.navbar-fixed-top{ role: 'navigation' }
   = link_to root_path do
-    = image_tag("academy_logo.svg", class: "navbar-logo")
+    = image_tag('academy_logo.svg', class: 'navbar-logo')
 
-  = link_to "AcademyStudents", root_path, class: "navbar-brand"
+  = link_to 'AcademyStudents', root_path, class: 'navbar-brand'
 
   .container-fluid
     .navbar-header
@@ -11,7 +11,7 @@
           Toggle sidebar
         %span.glyphicon.glyphicon-menu-right
 
-      %button.navbar-toggle{ type: "button", "data-toggle" => "collapse", "data-target" => ".navbar-collapse" }
+      %button.navbar-toggle{ type: 'button', 'data-toggle' => 'collapse', 'data-target' => '.navbar-collapse' }
         %span.sr-only
           Toggle navigation
         %span.icon-bar
@@ -24,6 +24,6 @@
           = link_to t(:locale_label), locales_toggle_path
         %li
           - if person_signed_in?
-            = link_to(t("devise.links.sign_out"), destroy_person_session_path, method: :delete)
+            = link_to(t('devise.links.sign_out'), destroy_person_session_path, method: :delete)
           - else
-            = link_to(t("devise.links.sign_in"), new_person_session_path)
+            = link_to(t('devise.links.sign_in'), new_person_session_path)

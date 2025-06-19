@@ -10,6 +10,6 @@ module Crudable
   private
 
   def set_resource
-    raise "Redefine me!"
+    raise 'Redefine me!'
   end
 end

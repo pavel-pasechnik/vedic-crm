@@ -19,23 +19,23 @@
           = academic_group.group_description
     .row
       .col-xs-3.col-sm-2
-        = t("academic_groups.show.active_students_count")
+        = t('academic_groups.show.active_students_count')
       .col-xs-9.col-sm-10
         = academic_group.active_students.count
     .row
       .col-xs-3.col-sm-2
-        = t("academic_groups.show.prabhu_count")
+        = t('academic_groups.show.prabhu_count')
       .col-xs-9.col-sm-10
         = academic_group.active_students.where(gender: true).count
     .row
       .col-xs-3.col-sm-2
-        = t("academic_groups.show.mataji_count")
+        = t('academic_groups.show.mataji_count')
       .col-xs-9.col-sm-10
         = academic_group.active_students.where(gender: false).count
     - if academic_group["message_#{locale}"].present?
       .row
         .col-xs-3.col-sm-2
-          = t("static_pages.home.message_for_group")
+          = t('static_pages.home.message_for_group')
         .col-xs-9.col-sm-10
           - academic_group["message_#{locale}"].split("\n").each do |message_part|
             = message_part
@@ -43,7 +43,7 @@
 
   - if [ academic_group.curator, academic_group.administrator, academic_group.praepostor ].any?
     %h4.col-xs-12.text-center
-      = t("academic_groups.show.group_servants")
+      = t('academic_groups.show.group_servants')
     .col-xs-12
       .table-responsive
         %table.table.table-condensed
@@ -61,4 +61,4 @@
                   %td
                     = mail_to(academic_group.send(servant_role).email) unless is_curator
                   %td
-                    = academic_group.send(servant_role).telephones.pluck(:phone).join(", ") unless is_curator
+                    = academic_group.send(servant_role).telephones.pluck(:phone).join(', ') unless is_curator

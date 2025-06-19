@@ -6,13 +6,13 @@ class BaseUploader < CarrierWave::Uploader::Base
   directory_permissions 0o0701
 
   def store_dir
-    subfolder = Rails.env.test? ? "/test" : ""
+    subfolder = Rails.env.test? ? '/test' : ''
 
     Rails.root.join "uploads#{subfolder}", model.class.to_s.underscore, mounted_as.to_s
   end
 
   def cache_dir
-    Rails.root.join "tmp/uploads/cache"
+    Rails.root.join 'tmp/uploads/cache'
   end
 
   def filename
@@ -21,17 +21,17 @@ class BaseUploader < CarrierWave::Uploader::Base
 
   def default_url
     ActionController::Base.helpers.asset_path("fallback/#{model.class.to_s.underscore}/" +
-                                                  [ version_name, "default.png" ].compact.join("_"))
+                                                  [ version_name, 'default.png' ].compact.join('_'))
   end
 
   def extension_white_list
-    raise "Override me"
+    raise 'Override me'
   end
 
   private
 
   def default_extension
-    raise "Override me"
+    raise 'Override me'
   end
 
   def secure_token

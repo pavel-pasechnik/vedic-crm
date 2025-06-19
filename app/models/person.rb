@@ -38,20 +38,20 @@ class Person < ApplicationRecord
   has_many :questionnaires, through: :questionnaire_completenesses
 
   has_many :administrated_groups,
-           class_name: "AcademicGroup",
-           foreign_key: "administrator_id",
+           class_name: 'AcademicGroup',
+           foreign_key: 'administrator_id',
            dependent: :nullify,
-           inverse_of: "administrator"
+           inverse_of: 'administrator'
   has_many :praeposted_groups,
-           class_name: "AcademicGroup",
-           foreign_key: "praepostor_id",
+           class_name: 'AcademicGroup',
+           foreign_key: 'praepostor_id',
            dependent: :nullify,
-           inverse_of: "praepostor"
+           inverse_of: 'praepostor'
   has_many :curated_groups,
-           class_name: "AcademicGroup",
-           foreign_key: "curator_id",
+           class_name: 'AcademicGroup',
+           foreign_key: 'curator_id',
            dependent: :nullify,
-           inverse_of: "curator"
+           inverse_of: 'curator'
 
   before_save :set_password, :set_complex_name, :set_uid
 
@@ -63,7 +63,7 @@ class Person < ApplicationRecord
   validates :password, confirmation: true
   validates :password, length: { in: 6..128, unless: :skip_password_validation }, on: :create
   validates :password, length: { in: 6..128 }, allow_blank: true, on: :update
-  validates :privacy_agreement, acceptance: { accept: "yes", unless: :skip_password_validation }, on: :create
+  validates :privacy_agreement, acceptance: { accept: 'yes', unless: :skip_password_validation }, on: :create
   validates :telephones, :birthday, presence: true
 
   validate :check_photo_dimensions
@@ -104,7 +104,7 @@ class Person < ApplicationRecord
 
       return all if query_array.none?
 
-      where("complex_name ilike any ( array[?] )", query_array)
+      where('complex_name ilike any ( array[?] )', query_array)
     end
   end
 
@@ -132,7 +132,7 @@ class Person < ApplicationRecord
   end
 
   def psycho_test_result
-    psycho_tests = questionnaire_completenesses.joins(:questionnaire).where(questionnaires: { kind: "psycho_test" })
+    psycho_tests = questionnaire_completenesses.joins(:questionnaire).where(questionnaires: { kind: 'psycho_test' })
 
     psycho_tests.first.result if psycho_tests.any?
   end
@@ -151,7 +151,7 @@ class Person < ApplicationRecord
     student_profile
       .academic_groups
       .where(group_participations: { leave_date: nil })
-      .order("group_participations.join_date ASC")
+      .order('group_participations.join_date ASC')
   end
 
   def previous_academic_groups
@@ -160,7 +160,7 @@ class Person < ApplicationRecord
     student_profile
       .academic_groups
       .where.not(group_participations: { leave_date: nil })
-      .order("group_participations.join_date ASC")
+      .order('group_participations.join_date ASC')
   end
 
   def currently_curated_academic_groups

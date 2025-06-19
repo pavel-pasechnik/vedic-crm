@@ -1,4 +1,4 @@
-require "openssl"
+require 'openssl'
 
 module Webhooks
   class MailgunController < ActionController::Metal
@@ -21,11 +21,11 @@ module Webhooks
     private
 
     def event
-      params.dig("event-data", "event")
+      params.dig('event-data', 'event')
     end
 
     def recipient
-      params.dig("event-data", "recipient")
+      params.dig('event-data', 'recipient')
     end
 
     def person
@@ -33,15 +33,15 @@ module Webhooks
     end
 
     def signature_valid?
-      signature = params["signature"]
+      signature = params['signature']
 
       return false if signature.blank?
-      return false if signature["timestamp"].blank? || signature["token"].blank? || signature["signature"].blank?
+      return false if signature['timestamp'].blank? || signature['token'].blank? || signature['signature'].blank?
 
-      digest = OpenSSL::Digest.new("SHA256")
+      digest = OpenSSL::Digest.new('SHA256')
       data = "#{signature['timestamp']}#{signature['token']}"
 
-      signature["signature"] == OpenSSL::HMAC.hexdigest(digest, Rails.application.secrets.mailgun_signing_key, data)
+      signature['signature'] == OpenSSL::HMAC.hexdigest(digest, Rails.application.secrets.mailgun_signing_key, data)
     end
 
     def set_known_statuses

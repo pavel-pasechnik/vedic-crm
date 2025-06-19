@@ -6,6 +6,6 @@ class TTFUploader < BaseUploader
   private
 
   def default_extension
-    "ttf"
+    'ttf'
   end
 end

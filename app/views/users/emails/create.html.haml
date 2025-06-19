@@ -1,12 +1,12 @@
 .row
   .col-xs-12
     %h2
-      = t(".title")
+      = t('.title')
 
     - case @emails.count
     - when 0
       %p.text-warning
-        = t(".no_telephone")
+        = t('.no_telephone')
     - when 1
       = @emails.first
     - else

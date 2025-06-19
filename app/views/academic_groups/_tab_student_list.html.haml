@@ -1,18 +1,18 @@
 - if show_pdf_export_menu?
   .row.vert-offset-top-1
     .col-xs-12
-      - if current_person.can_act?("academic_group:group_list_pdf")
-        = link_to t("academic_groups.show.group_list_pdf"),
+      - if current_person.can_act?('academic_group:group_list_pdf')
+        = link_to t('academic_groups.show.group_list_pdf'),
                   group_list_pdf_path(academic_group),
-                  rel: "noopener noreferrer",
-                  target: "_blank",
-                  class: "btn btn-success btn-xs glyphicon glyphicon-print"
-      - if current_person.can_act?("academic_group:attendance_template_pdf")
-        = link_to t("academic_groups.show.attendance_template_pdf"),
+                  rel: 'noopener noreferrer',
+                  target: '_blank',
+                  class: 'btn btn-success btn-xs glyphicon glyphicon-print'
+      - if current_person.can_act?('academic_group:attendance_template_pdf')
+        = link_to t('academic_groups.show.attendance_template_pdf'),
                   attendance_template_pdf_path(academic_group),
-                  rel: "noopener noreferrer",
-                  target: "_blank",
-                  class: "btn btn-success btn-xs glyphicon glyphicon-print"
+                  rel: 'noopener noreferrer',
+                  target: '_blank',
+                  class: 'btn btn-success btn-xs glyphicon glyphicon-print'
 .row.vert-offset-top-1
   .col-xs-12
     .table-responsive
@@ -20,11 +20,11 @@
         %thead
           %tr
             %th #
-            %th= t("academic_groups.show.photo")
-            %th= t("academic_groups.show.full_name")
-            %th= t("academic_groups.show.birthday")
+            %th= t('academic_groups.show.photo')
+            %th= t('academic_groups.show.full_name')
+            %th= t('academic_groups.show.birthday')
             - if am_i_group_elder?(academic_group)
-              %th= t("academic_groups.show.telephones")
+              %th= t('academic_groups.show.telephones')
         %tbody
           - students.each_with_index do |student, index|
             %tr
@@ -38,4 +38,4 @@
                 = l(student.birthday, format: :short)
               - if am_i_group_elder?(academic_group)
                 %td
-                  = student.telephones.map(&:phone).join(", ")
+                  = student.telephones.map(&:phone).join(', ')

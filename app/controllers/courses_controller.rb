@@ -53,14 +53,14 @@ class CoursesController < HtmlRespondableController
 
     if @course.class_schedules_count.positive?
       errors << t(
-        ".remove_class_schedules_first",
+        '.remove_class_schedules_first',
         class_schedules_count: @course.class_schedules_count
       )
     end
 
     if @course.examination_results_count.positive?
       errors << t(
-        ".remove_examination_results_first",
+        '.remove_examination_results_first',
         examination_results_count: @course.examination_results_count
       )
     end

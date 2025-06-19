@@ -14,17 +14,17 @@
   - if @programs.any?
     .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.vert-offset-top-1
       %h5
-        = t(".programs")
+        = t('.programs')
     .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
       .table-responsive
         %table.table.table-condensed.table-striped
           %thead
             %tr
               %th.text-top
-                = t(".program_title")
+                = t('.program_title')
               %th.text-top.text-center
-                = t("programs.index.program_visibility")
-                = inline_info(t("programs.index.program_visibility_help"))
+                = t('programs.index.program_visibility')
+                = inline_info(t('programs.index.program_visibility_help'))
 
           %tbody
             - @programs.each do |program|
@@ -37,17 +37,17 @@
 
   .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.vert-offset-top-1
     %h5.clearfix
-      = t(".questions")
+      = t('.questions')
 
   .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
     .table-responsive
       %table.table.table-condensed.table-striped
         %thead
           %tr
-            %th= "#"
-            %th= t(".question_title")
-            %th= t(".question_format")
-            %th= t(".question_required")
+            %th= '#'
+            %th= t('.question_title')
+            %th= t('.question_format')
+            %th= t('.question_required')
 
         %tbody
           - @questions.each do |question|

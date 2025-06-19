@@ -14,17 +14,17 @@ class BaseImageUploader < BaseUploader
   end
 
   def default_extension
-    "jpg"
+    'jpg'
   end
 
-  def optimize(quality_percent = "80")
+  def optimize(quality_percent = '80')
     manipulate! do |img|
       img.strip
 
-      img.format("jpg") do |c|
+      img.format('jpg') do |c|
         c.quality(quality_percent)
-        c.depth "8"
-        c.interlace "plane"
+        c.depth '8'
+        c.interlace 'plane'
       end
 
       img
@@ -50,7 +50,7 @@ class BaseImageUploader < BaseUploader
   end
 
   def get_image_size(file)
-    path = file.is_a?(String) ? Rails.root.join("tmp/uploads/cache", file) : file.path
+    path = file.is_a?(String) ? Rails.root.join('tmp/uploads/cache', file) : file.path
 
     `identify -format "%wx %h" #{path}`.split(/x/).map(&:to_i)
   end

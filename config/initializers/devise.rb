@@ -24,7 +24,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -36,7 +36,7 @@ Devise.setup do |config|
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
-  require "devise/orm/active_record"
+  require 'devise/orm/active_record'
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -314,23 +314,23 @@ Devise.setup do |config|
   # JWT settings (be sure to set `jwt` to jwt_secret_key,
   # but it is better to put the secret in ENV variables)
   config.jwt do |jwt|
-    jwt.secret = Rails.application.credentials.dig(:devise_jwt_secret_key) || ENV["DEVISE_JWT_SECRET_KEY"]
+    jwt.secret = Rails.application.credentials.dig(:devise_jwt_secret_key) || ENV['DEVISE_JWT_SECRET_KEY']
     jwt.dispatch_requests = [
-    [ "POST", %r{^/people/sign_in$} ]
+    [ 'POST', %r{^/people/sign_in$} ]
 ]
     jwt.revocation_requests = [
-      [ "DELETE", %r{^/people/sign_out$} ]
+      [ 'DELETE', %r{^/people/sign_out$} ]
     ]
     # the token will be valid for e.g. 1 day:
     jwt.expiration_time = 24.hours.to_i
   end
 
   config.omniauth :google_oauth2,
-                  ENV["GOOGLE_CLIENT_ID"],
-                  ENV["GOOGLE_CLIENT_SECRET"],
-                  scope: "email,profile"
+                  ENV['GOOGLE_CLIENT_ID'],
+                  ENV['GOOGLE_CLIENT_SECRET'],
+                  scope: 'email,profile'
   config.omniauth :facebook,
-                  ENV["FACEBOOK_APP_ID"],
-                  ENV["FACEBOOK_APP_SECRET"],
-                  scope: "email,public_profile"
+                  ENV['FACEBOOK_APP_ID'],
+                  ENV['FACEBOOK_APP_SECRET'],
+                  scope: 'email,public_profile'
 end

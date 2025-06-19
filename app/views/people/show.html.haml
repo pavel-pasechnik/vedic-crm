@@ -3,18 +3,18 @@
     .pull-right
       - if policy(@person).move_to_group?
         .btn-group#change-academic-group{ data: { person: @person.id } }
-          %button{ type: "button", class: "btn btn-xs btn-primary dropdown-toggle", data: { toggle: "dropdown" }, aria: { expanded: "false" } }
+          %button{ type: 'button', class: 'btn btn-xs btn-primary dropdown-toggle', data: { toggle: 'dropdown' }, aria: { expanded: 'false' } }
             Add to group
             %span.caret
-          %ul.dropdown-menu{ role: "menu" }
+          %ul.dropdown-menu{ role: 'menu' }
             - if policy(@person).move_to_group?
               - @academic_groups.each do |group|
-                %li{ class: group.active_for_person?(@person) ? "disabled" : "" }
-                  = link_to group.title, "#", data: { group: group.id, confirmation: "Are you sure you want to add the person to group #{group.title}?" }, id: "move-to-group"
+                %li{ class: group.active_for_person?(@person) ? 'disabled' : '' }
+                  = link_to group.title, '#', data: { group: group.id, confirmation: "Are you sure you want to add the person to group #{group.title}?" }, id: 'move-to-group'
       - if policy(@person).edit?
-        = link_to t("links.edit"), edit_person_path(@person), class: "btn btn-xs btn-primary"
+        = link_to t('links.edit'), edit_person_path(@person), class: 'btn btn-xs btn-primary'
       - if policy(@person).destroy?
-        = link_to t("links.delete"), person_path(@person), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-xs btn-danger"
+        = link_to t('links.delete'), person_path(@person), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger'
 
 .row
   .col-xs-12
@@ -22,10 +22,10 @@
       .col-xs-12.col-sm-4.vert-offset-bottom-1
         .row
           .col-xs-12
-            = person_photo(@person, :standart, class: "img-thumbnail img-version-standart")
+            = person_photo(@person, :standart, class: 'img-thumbnail img-version-standart')
           - if @person.photo.present? && policy(@person).crop_image?
             .col-xs-12
-              = link_to t("links.crop_photo"), crop_image_path(@person.id), class: "btn btn-default"
+              = link_to t('links.crop_photo'), crop_image_path(@person.id), class: 'btn btn-default'
       .col-xs-12.col-sm-8
         .row
           .col-xs-4.col-sm-3
@@ -56,7 +56,7 @@
                         = l last_participation.join_date, format: :time_picker
                       %td
                         - if policy(last_participation).destroy?
-                          = link_to "leave",
+                          = link_to 'leave',
                             group_participation_path(last_participation, leave: true),
                             method: :delete,
                             data: { confirm: "Are you sure you want to leave #{academic_group.title}?" }
@@ -90,7 +90,7 @@
                         = l last_participation.leave_date, format: :time_picker
                       %td
                         - if policy(last_participation).destroy?
-                          = link_to "destroy!",
+                          = link_to 'destroy!',
                             group_participation_path(last_participation),
                             method: :delete,
                             data: { confirm: "Destroy the history about #{academic_group.title}?" }
@@ -98,12 +98,12 @@
           .col-xs-4.col-sm-3
             Certificates:
           .col-xs-8.col-sm-9
-            = render "shared/certificates_table", certificates: @certificates
+            = render 'shared/certificates_table', certificates: @certificates
         .row
           .col-xs-4.col-sm-3
             Gender:
           .col-xs-8.col-sm-9
-            = @person.gender ? "Male" : "Female"
+            = @person.gender ? 'Male' : 'Female'
         .row
           .col-xs-4.col-sm-3
             Birthday:
@@ -124,18 +124,18 @@
 
 .row
   .col-xs-12.vert-offset-top-1#pending_docs
-    = render "shared/pending_docs", person: @application_person, is_links: false
+    = render 'shared/pending_docs', person: @application_person, is_links: false
 
 - if policy(Note).index?
   .row
     .col-xs-12
-      %h3.text-center=t(".special_notes")
+      %h3.text-center=t('.special_notes')
     .col-xs-12
       .text-center
-        = link_to_new current_person.can_act?("note:new"), new_person_note_path(@person)
+        = link_to_new current_person.can_act?('note:new'), new_person_note_path(@person)
 
       - if @person.notes.none?
-        .text-center.vert-offset-top-1=t(".no_special_notes")
+        .text-center.vert-offset-top-1=t('.no_special_notes')
       - else
         .table-responsive.vert-offset-top-1
           %table.table.table-condensed.table-striped
@@ -154,15 +154,15 @@
   .row
     .col-xs-12.vert-offset-top-1
       %h3.text-center
-        = t(".study_applications")
+        = t('.study_applications')
     .col-xs-12.stop_double_submit#study_application
-      = render "shared/study_application", person: @application_person, programs: @programs, study_application: @new_study_application, is_links_in_pending_docs: false
+      = render 'shared/study_application', person: @application_person, programs: @programs, study_application: @new_study_application, is_links_in_pending_docs: false
 
 - initial_questionnaires = completed_initial_questionnaires(@person)
 - if initial_questionnaires.any?
   .row.vert-offset-top-1
     .col-xs-12
-      %h3.text-center=t(".completed_questionnaires")
+      %h3.text-center=t('.completed_questionnaires')
     - initial_questionnaires.each do |questionnaire, answers|
       .col-xs-12
         %h4= questionnaire[locale][:title]
@@ -179,10 +179,10 @@
   .row.vert-offset-top-1
     .col-xs-12
       %h3.text-center
-        = t(".psycho_test_results")
+        = t('.psycho_test_results')
     - @person.psycho_test_result.each do |key, data|
       .col-xs-12.col-sm-6
-        %div{ class: "popover-enable", data: { toggle: "popover", content: data[locale][:description] } }
+        %div{ class: 'popover-enable', data: { toggle: 'popover', content: data[locale][:description] } }
           %p= data[locale][:title]
           .progress
             .progress-bar{  class: "progress-bar-#{data[:color]}", role: :progressbar, style: "width: #{data[:percentage]}%;",

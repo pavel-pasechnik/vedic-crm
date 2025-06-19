@@ -1,5 +1,5 @@
 Sentry.init do |config|
-  config.dsn = ENV["SENTRY_DSN_RAILS"]
+  config.dsn = ENV['SENTRY_DSN_RAILS']
   config.breadcrumbs_logger = [ :active_support_logger, :http_logger ]
 
   # Add data like request headers and IP for users,

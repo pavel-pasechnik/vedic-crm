@@ -8,6 +8,6 @@ class NotifyVerificationExpiredJob < ApplicationJob
   private
 
   def people_to_notify
-    Person.joins(:roles).where("roles.activities @> ARRAY[?]::varchar[]", "person:verify")
+    Person.joins(:roles).where('roles.activities @> ARRAY[?]::varchar[]', 'person:verify')
   end
 end

@@ -2,7 +2,7 @@
   = select2_scripts_and_stylesheets
 
 = simple_form_for @program do |f|
-  = render "shared/error_messages", object: f.object
+  = render 'shared/error_messages', object: f.object
 
   .form-inputs
     = f.input :title_uk
@@ -22,15 +22,15 @@
     = f.association :manager,
                     label_method: :complex_name,
                     collection: [ f.object.manager ].compact,
-                    input_html: { data: { placeholder: t(".select_manager_placeholder"), 'ajax--url': ui_group_admins_path } }
+                    input_html: { data: { placeholder: t('.select_manager_placeholder'), 'ajax--url': ui_group_admins_path } }
 
     = f.association :questionnaires,
                     label_method: :"title_#{locale}",
                     collection: f.object.questionnaires,
-                    hint: t(".questionnaires_hint"),
-                    input_html: { data: { placeholder: t(".select_questionnaires_placeholder"), 'ajax--url': ui_questionnaires_path } }
+                    hint: t('.questionnaires_hint'),
+                    input_html: { data: { placeholder: t('.select_questionnaires_placeholder'), 'ajax--url': ui_questionnaires_path } }
 
   .form-actions
-    = f.button :button, class: "btn btn-submit col-xs-12" do
+    = f.button :button, class: 'btn btn-submit col-xs-12' do
       %span.glyphicon.glyphicon-refresh.spinner{ aria: { hidden: true } }
       = submit_label

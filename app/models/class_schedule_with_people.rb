@@ -1,8 +1,8 @@
 class ClassScheduleWithPeople < ClassSchedule
-  REDIS_LOCK_KEY = "class_schedule_with_people_mv_refresh".freeze
-  self.table_name = "class_schedules_with_people"
+  REDIS_LOCK_KEY = 'class_schedule_with_people_mv_refresh'.freeze
+  self.table_name = 'class_schedules_with_people'
 
-  belongs_to :teacher, class_name: "Person"
+  belongs_to :teacher, class_name: 'Person'
 
   def readonly?
     true

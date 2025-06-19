@@ -11,10 +11,10 @@
       = f.input :name
       = f.input :middle_name
       = f.input :surname
-      = render "shared/nested_telephones", f: f
+      = render 'shared/nested_telephones', f: f
       = f.input :gender, collection: [ [ :male, true ], [ :female, false ] ],
                          label_method: lambda { |element| t("simple_form.options.person.gender.#{element.first}") }
-      = f.input :birthday, as: :string, input_html: { type: "date", value: date_value(f.object.birthday) }
+      = f.input :birthday, as: :string, input_html: { type: 'date', value: date_value(f.object.birthday) }
 
     .form-actions
       = f.button :submit

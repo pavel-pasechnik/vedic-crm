@@ -1,21 +1,21 @@
-- provide(:title, t(".title"))
+- provide(:title, t('.title'))
 
 .row
   .col-xs-12
-    %h1.text-center=t(".title")
+    %h1.text-center=t('.title')
 
   .col-xs-12.col-sm-6.col-sm-offset-3.vert-offset-top-1.text-right
-    = link_to_new current_person.can_act?("certificate_template_font:new"), new_certificate_template_font_path
+    = link_to_new current_person.can_act?('certificate_template_font:new'), new_certificate_template_font_path
 
   .col-xs-12.col-sm-6.col-sm-offset-3
     .table-responsive
       %table.table.table-condensed.table-striped
         %thead
           %tr
-            %th=t(".template_title")
+            %th=t('.template_title')
 
             - if @certificate_template_fonts.any? { |c| policy(c).tap { |p| break p.edit? || p.destroy? } }
-              %th.text-right=t(".actions")
+              %th.text-right=t('.actions')
 
         %tbody
           - @certificate_template_fonts.each do |certificate_template_font|

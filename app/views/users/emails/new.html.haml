@@ -1,23 +1,23 @@
 - content_for(:js_and_css) do
-  = stylesheet_link_tag "intlTelInput", media: "all"
+  = stylesheet_link_tag 'intlTelInput', media: 'all'
   = vite_client_tag
-  = vite_javascript_tag "forgot_email", type: "text/javascript"
+  = vite_javascript_tag 'forgot_email', type: 'text/javascript'
 
 .row
   .col-xs-12
     %h2.text-center
-      = t(".forgot_email")
+      = t('.forgot_email')
 
 .row.vert-offset-top-1
   .col-xs-12
     = form_tag show_emails_path, role: :form do
       .row
         .col-xs-12.col-sm-offset-3.col-sm-6.col-md-offset-4.col-md-4
-          = label_tag :phone, t(".enter_phone")
-          = telephone_field_tag :phone, nil, class: "form-control", id: "phone"
+          = label_tag :phone, t('.enter_phone')
+          = telephone_field_tag :phone, nil, class: 'form-control', id: 'phone'
       .row.vert-offset-top-1
         .col-xs-12.col-sm-offset-3.col-sm-6.col-md-offset-4.col-md-4
-          = recaptcha_tags display: { theme: "white", lang: I18n.locale.to_s }
+          = recaptcha_tags display: { theme: 'white', lang: I18n.locale.to_s }
       .row.vert-offset-top-1
         .col-xs-12.col-sm-offset-3.col-sm-6.col-md-offset-4.col-md-4
-          = submit_tag t(".get_email"), class: "btn btn-primary col-xs-12"
+          = submit_tag t('.get_email'), class: 'btn btn-primary col-xs-12'

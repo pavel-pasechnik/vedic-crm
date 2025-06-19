@@ -8,7 +8,7 @@ class CertificatesController < HtmlRespondableController
       Certificate
         .where(certificate_template_id: params[:certificate_template_id])
         .includes(:academic_group, student_profile: :person)
-        .order("people.complex_name ASC")
+        .order('people.complex_name ASC')
         .page(params[:page])
 
     authorize @certificates
@@ -21,9 +21,9 @@ class CertificatesController < HtmlRespondableController
 
     authorize @certificate || Certificate.new
 
-    return redirect_with_alert(t(".not_found")) if @certificate.nil?
+    return redirect_with_alert(t('.not_found')) if @certificate.nil?
 
-    message_key = @certificate.destroy ? "certificates.destroy.success" : "certificates.destroy.failure"
+    message_key = @certificate.destroy ? 'certificates.destroy.success' : 'certificates.destroy.failure'
     redirect_with_notice(t(message_key))
   end
 

@@ -1,7 +1,7 @@
 - content_for(:js_and_css) do
   = vite_client_tag
-  = vite_javascript_tag "react-bundle.jsx", type: "text/javascript"
-  = vite_javascript_tag "advanced-search-bundle", type: "text/javascript"
+  = vite_javascript_tag 'react-bundle.jsx', type: 'text/javascript'
+  = vite_javascript_tag 'advanced-search-bundle', type: 'text/javascript'
 
 :ruby
   props.merge!({
@@ -16,4 +16,4 @@
     }
   })
 
-= react_component("AdvancedSearchApp", props: props)
+= react_component('AdvancedSearchApp', props: props)

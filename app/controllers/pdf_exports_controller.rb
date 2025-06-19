@@ -30,7 +30,7 @@ class PdfExportsController < ApplicationController
 
     prepare_certificate_data(certificate, certificate_template)
 
-    render "certificate"
+    render 'certificate'
   end
 
   def certificate
@@ -74,7 +74,7 @@ class PdfExportsController < ApplicationController
   end
 
   def format_color(color)
-    color.start_with?("#") ? color.slice(1, color.length - 1) : color
+    color.start_with?('#') ? color.slice(1, color.length - 1) : color
   end
 
   def image_blocks(certificate_template)

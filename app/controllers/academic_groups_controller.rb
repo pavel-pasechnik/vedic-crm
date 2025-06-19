@@ -17,10 +17,10 @@ class AcademicGroupsController < HtmlRespondableController
       params[:search]&.values || [],
       %w[title group_description],
       {
-        "title" => "title",
-        "establ_date" => "establ_date",
-        "graduated_at" => "date_trunc('minute', graduated_at)",
-        "group_description" => "group_description"
+        'title' => 'title',
+        'establ_date' => 'establ_date',
+        'graduated_at' => "date_trunc('minute', graduated_at)",
+        'group_description' => 'group_description'
       }
     )
 
@@ -68,7 +68,7 @@ class AcademicGroupsController < HtmlRespondableController
     @academic_group.graduate!
     @academic_group.group_participations.each(&:leave!)
 
-    redirect_to academic_group_path(@academic_group), flash: { success: "Academic group was successfully graduated." }
+    redirect_to academic_group_path(@academic_group), flash: { success: 'Academic group was successfully graduated.' }
   end
 
   class AcademicGroupParams
@@ -162,7 +162,7 @@ class AcademicGroupsController < HtmlRespondableController
     finished_groups =
       base
         .where.not(academic_groups: { graduated_at: nil })
-        .where("leave_date >= academic_groups.graduated_at")
+        .where('leave_date >= academic_groups.graduated_at')
 
     current_groups
       .or(finished_groups)
@@ -185,7 +185,7 @@ class AcademicGroupsController < HtmlRespondableController
       policy(@academic_group).show?,
       title,
       academic_group_path(@academic_group),
-      class: "alert-link"
+      class: 'alert-link'
     ) do
       title
     end

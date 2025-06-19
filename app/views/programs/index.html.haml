@@ -1,10 +1,10 @@
-- provide(:title, t(".title"))
+- provide(:title, t('.title'))
 
 .row
   .col-xs-12
-    %h1.text-center=t(".title")
+    %h1.text-center=t('.title')
 
-  - if current_person.can_act?("program:new")
+  - if current_person.can_act?('program:new')
     .col-xs-12.col-sm-10.col-sm-offset-1.vert-offset-top-1.vert-offset-bottom-1.text-right
       = link_to_new(true, new_program_path)
 
@@ -13,22 +13,22 @@
       %table.table.table-condensed.table-striped
         %thead
           %tr
-            %th.text-top= t(".program_title")
+            %th.text-top= t('.program_title')
             %th.text-top
-              = t(".program_manager")
-              = inline_info(t(".program_manager_help"))
-            %th.text-top.text-center= t(".program_study_applications_count")
+              = t('.program_manager')
+              = inline_info(t('.program_manager_help'))
+            %th.text-top.text-center= t('.program_study_applications_count')
             %th.text-top.text-center
-              = t(".program_position")
-              = inline_info(t(".program_position_help"))
+              = t('.program_position')
+              = inline_info(t('.program_position_help'))
             %th.text-top.text-center
-              = t(".program_visibility")
-              = inline_info(t(".program_visibility_help"))
+              = t('.program_visibility')
+              = inline_info(t('.program_visibility_help'))
 
-            %th.text-top.text-center= t(".program_questionnaires_count")
+            %th.text-top.text-center= t('.program_questionnaires_count')
 
             - if @programs.any? { |program| policy(program).tap { |p| break p.edit? || p.destroy? } }
-              %th.text-top.text-right= t(".actions")
+              %th.text-top.text-right= t('.actions')
 
         %tbody
           - @programs.each do |program|

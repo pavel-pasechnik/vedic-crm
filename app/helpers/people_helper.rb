@@ -1,15 +1,15 @@
 module PeopleHelper
   def not_adult_warning(birthday)
-    content_tag(:span, t("people.show.not_adult"), class: :'text-danger') if birthday > 16.years.ago
+    content_tag(:span, t('people.show.not_adult'), class: :'text-danger') if birthday > 16.years.ago
   end
 
   def leave_reason(group_participation)
     academic_group = group_participation.academic_group
 
     if academic_group.graduated_at.present? && academic_group.graduated_at <= group_participation.leave_date
-      "graduation"
+      'graduation'
     else
-      "manual"
+      'manual'
     end
   end
 
@@ -45,7 +45,7 @@ module PeopleHelper
                           .select(:questionnaire_id)
 
     Questionnaire
-      .where(id: questionnaire_ids, kind: "initial_questions")
+      .where(id: questionnaire_ids, kind: 'initial_questions')
       .order(:id)
       .select(:id, :description_uk, :description_ru, :title_uk, :title_ru)
   end

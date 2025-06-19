@@ -13,7 +13,7 @@ class CertificateImportsController < HtmlRespondableController
     if file.present?
       @result = ImportCertificatesService.call(file.read)
     else
-      redirect_to new_certificate_import_path, alert: t("certificate_imports.new.file_is_not_present_alert")
+      redirect_to new_certificate_import_path, alert: t('certificate_imports.new.file_is_not_present_alert')
 
     end
   end

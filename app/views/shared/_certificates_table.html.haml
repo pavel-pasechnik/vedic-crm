@@ -3,11 +3,11 @@
     %thead
       %tr
         %th.text-top #
-        %th.text-top=t(".serial_id")
-        %th.text-top=t(".template")
-        %th.text-top=t(".issued_date")
-        %th.text-top=t(".final_score")
-        %th.text-top=t(".actions")
+        %th.text-top=t('.serial_id')
+        %th.text-top=t('.template')
+        %th.text-top=t('.issued_date')
+        %th.text-top=t('.final_score')
+        %th.text-top=t('.actions')
     %tbody
       - if certificates.any?
         - certificates.each_with_index do |certificate, index|
@@ -29,4 +29,4 @@
       - else
         %tr
           %td.central-row{ colspan: 4 }
-            = t(".no_certificates_yet")
+            = t('.no_certificates_yet')

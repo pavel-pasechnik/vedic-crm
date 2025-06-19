@@ -1,9 +1,9 @@
-= link_to_edit params[:action] != "edit".freeze && policy(certificate_template).edit?,
+= link_to_edit params[:action] != 'edit'.freeze && policy(certificate_template).edit?,
   edit_certificate_template_path(certificate_template)
 
 = link_to_new policy(certificate_template).new?, new_certificate_template_path
 
-= link_to_copy current_person.can_act?("certificate_template:new"), certificate_template_copy_path(certificate_template)
+= link_to_copy current_person.can_act?('certificate_template:new'), certificate_template_copy_path(certificate_template)
 
 = link_to_index policy(CertificateTemplate).index?, certificate_templates_path
 

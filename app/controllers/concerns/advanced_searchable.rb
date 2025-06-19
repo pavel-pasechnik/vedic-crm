@@ -3,20 +3,20 @@ module AdvancedSearchable
 
   def advanced_search(filters, general_search_fields, fields_mapper)
     filters.each do |filter|
-      value = filter["value"]
-      field = filter["field"]
-      condition = filter["condition"]
+      value = filter['value']
+      field = filter['field']
+      condition = filter['condition']
 
-      case filter["type"]
-      when "general-search"
+      case filter['type']
+      when 'general-search'
         mix_general_search_query(general_search_fields, value)
-      when "text"
+      when 'text'
         mix_text_query(field, value, fields_mapper)
-      when "date"
+      when 'date'
         mix_condition_query(field, Date.parse(value), fields_mapper, condition)
-      when "datetime-local"
+      when 'datetime-local'
         mix_condition_query(field, Time.zone.parse(value), fields_mapper, condition)
-      when "number"
+      when 'number'
         mix_condition_query(field, value.to_i, fields_mapper, condition)
       end
     end

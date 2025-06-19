@@ -46,7 +46,7 @@ class ProgramsController < HtmlRespondableController
         fallback_location: programs_path,
         flash: {
           danger: t(
-            ".process_study_applications_first",
+            '.process_study_applications_first',
             study_applications_count: @program.study_applications_count
           )
         }

@@ -15,7 +15,7 @@ module ClassScheduleCustomValidations
     return if required_roominess <= classroom.roominess
 
     errors.add(:classroom,
-               I18n.t("activerecord.errors.models.class_schedule.attributes.classroom.roominess",
+               I18n.t('activerecord.errors.models.class_schedule.attributes.classroom.roominess',
                       actual: classroom.roominess,
                       required: required_roominess))
   end
@@ -24,8 +24,8 @@ module ClassScheduleCustomValidations
     return if finish_time.blank? || start_time.blank?
     return if finish_time - start_time < 1.day && finish_time - start_time >= 10.minutes && start_time < finish_time
 
-    errors.add(:start_time, I18n.t("activerecord.errors.models.class_schedule.wrong_times"))
-    errors.add(:finish_time, I18n.t("activerecord.errors.models.class_schedule.wrong_times"))
+    errors.add(:start_time, I18n.t('activerecord.errors.models.class_schedule.wrong_times'))
+    errors.add(:finish_time, I18n.t('activerecord.errors.models.class_schedule.wrong_times'))
   end
 
   def teacher_availability
@@ -33,14 +33,14 @@ module ClassScheduleCustomValidations
     return if obj_availability(teacher_profile_id: teacher_profile.id)
 
     errors.add(:teacher_profile,
-               I18n.t("activerecord.errors.models.class_schedule.attributes.teacher_profile.availability"))
+               I18n.t('activerecord.errors.models.class_schedule.attributes.teacher_profile.availability'))
   end
 
   def classroom_availability
     return if classroom.blank?
     return if obj_availability(classroom_id: classroom.id)
 
-    errors.add(:classroom, I18n.t("activerecord.errors.models.class_schedule.attributes.classroom.availability"))
+    errors.add(:classroom, I18n.t('activerecord.errors.models.class_schedule.attributes.classroom.availability'))
   end
 
   def academic_groups_availability
@@ -51,7 +51,7 @@ module ClassScheduleCustomValidations
                            .where(academic_group_schedules: { academic_group_id: academic_groups.map(&:id) })
                            .where.not(academic_group_schedules: { class_schedule_id: id })
                            .where(
-                             "(class_schedules.start_time, class_schedules.finish_time) OVERLAPS (:start, :finish)",
+                             '(class_schedules.start_time, class_schedules.finish_time) OVERLAPS (:start, :finish)',
                              start: start_time,
                              finish: finish_time
                            )
@@ -60,8 +60,8 @@ module ClassScheduleCustomValidations
     return if unavailable_groups.none?
 
     errors.add(:academic_groups,
-               I18n.t("activerecord.errors.models.class_schedule.attributes.academic_groups.availability",
-                      groups: unavailable_groups.pluck(:title).sort.join(", ")))
+               I18n.t('activerecord.errors.models.class_schedule.attributes.academic_groups.availability',
+                      groups: unavailable_groups.pluck(:title).sort.join(', ')))
   end
 
   def obj_availability(params)
@@ -69,7 +69,7 @@ module ClassScheduleCustomValidations
       .where(params)
       .where.not(id: id)
       .find_by(
-        "(start_time, finish_time) OVERLAPS (:start, :finish)",
+        '(start_time, finish_time) OVERLAPS (:start, :finish)',
         start: start_time,
         finish: finish_time
       )

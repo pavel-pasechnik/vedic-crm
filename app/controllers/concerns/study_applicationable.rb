@@ -17,7 +17,7 @@ module StudyApplicationable
     # TODO: move to policy
     return Program.none if person.blank?
 
-    if person.can_act?("study_application:create")
+    if person.can_act?('study_application:create')
       Program.all
     else
       Program.where(visible: true)

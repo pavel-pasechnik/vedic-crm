@@ -1,4 +1,4 @@
-class PDFUploader < CarrierWave::Uploader::Base
+class PdfUploader < CarrierWave::Uploader::Base
   def extension_allowlist
     %w[pdf]
   end
@@ -6,6 +6,6 @@ class PDFUploader < CarrierWave::Uploader::Base
   private
 
   def default_extension
-    "pdf"
+    'pdf'
   end
 end

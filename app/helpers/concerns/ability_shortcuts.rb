@@ -32,14 +32,14 @@ module AbilityShortcuts
   end
 
   def show_journal_link?
-    current_person&.can_act?("paper_trail/version:show")
+    current_person&.can_act?('paper_trail/version:show')
   end
 
   def show_statistics_yearly_active_students_link?
-    current_person&.can_act?("statistics_controller:yearly_active_students")
+    current_person&.can_act?('statistics_controller:yearly_active_students')
   end
 
   def show_statistics_yearly_certificates_link?
-    current_person&.can_act?("statistics_controller:yearly_certificates")
+    current_person&.can_act?('statistics_controller:yearly_certificates')
   end
 end

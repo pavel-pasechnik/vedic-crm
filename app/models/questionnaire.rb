@@ -3,7 +3,7 @@ class Questionnaire < ApplicationRecord
 
   serialize :rule, coder: JSON
 
-  has_many :programs_questionnaires, dependent: :destroy, class_name: "ProgramsQuestionnaire"
+  has_many :programs_questionnaires, dependent: :destroy, class_name: 'ProgramsQuestionnaire'
   has_many :questions, dependent: :destroy
   has_many :questionnaire_completenesses, dependent: :destroy
   has_many :programs, through: :programs_questionnaires

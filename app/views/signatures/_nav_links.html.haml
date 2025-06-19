@@ -1,4 +1,4 @@
-= link_to_edit params[:action] != "edit".freeze && policy(signature).edit?,
+= link_to_edit params[:action] != 'edit'.freeze && policy(signature).edit?,
   edit_signature_path(signature)
 
 = link_to_new policy(signature).new?, new_signature_path

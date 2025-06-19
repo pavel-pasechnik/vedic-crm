@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def user_not_authorized
-    flash[:danger] = t("not_authorized")
+    flash[:danger] = t('not_authorized')
 
     redirect_to((request.referer || root_path), status: :see_other)
   end
@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
   return unless Sentry.initialized?
 
   Sentry.set_user(id: user_for_paper_trail)
-  Sentry.set_context("params", params.to_unsafe_h)
+  Sentry.set_context('params', params.to_unsafe_h)
   Sentry.set_tags(url: request.url)
   end
 end

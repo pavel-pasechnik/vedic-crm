@@ -5,7 +5,7 @@ module ProgramsHelper
       program.study_applications.any?,
       program_path(program),
       t(
-        "programs.destroy.process_study_applications_first",
+        'programs.destroy.process_study_applications_first',
         study_applications_count: program.study_applications_count
       )
     )

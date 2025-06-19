@@ -1,9 +1,9 @@
-- provide(:title, t(".title"))
+- provide(:title, t('.title'))
 
 .row
   .col-xs-12
     %h1.text-center
-      = t(".title")
+      = t('.title')
 
 .row.vert-offset-top-1
   .col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-sm-offset-3
@@ -48,7 +48,7 @@
         }
       }
 
-    = render "shared/advanced_search", props: props
+    = render 'shared/advanced_search', props: props
 
 .row.vert-offset-top-1
   .col-xs-12
@@ -56,18 +56,18 @@
       %table.table.table-condensed.table-striped
         %thead
           %tr
-            %th.text-top=t(".table_title_name")
-            %th.text-top.text-center=t(".table_title_established")
-            %th.text-top.text-center=t(".table_title_graduated")
-            %th.text-top=t(".table_title_description")
-            %th.text-top.text-center=t(".table_title_active_students_count")
+            %th.text-top=t('.table_title_name')
+            %th.text-top.text-center=t('.table_title_established')
+            %th.text-top.text-center=t('.table_title_graduated')
+            %th.text-top=t('.table_title_description')
+            %th.text-top.text-center=t('.table_title_active_students_count')
 
             - if @groups_page.any? { |c| policy(c).tap { |p| break p.edit? || p.destroy? || p.statistics? } }
-              %th.text-top.text-right=t(".table_title_actions")
+              %th.text-top.text-right=t('.table_title_actions')
 
         %tbody
           - @groups_page.each do |academic_group|
-            %tr{ class: "academic_group", id: academic_group.id }
+            %tr{ class: 'academic_group', id: academic_group.id }
               %td= link_to_show_academic_group_or_title(academic_group)
               %td.text-center= l(academic_group.establ_date) if academic_group.establ_date.present?
               %td.text-center= l(academic_group.graduated_at, format: :with_day) unless academic_group.active?
@@ -78,9 +78,9 @@
                 %td.col-xs-2.col-sm-4.col-md-3.text-right.text-middle
                   = link_to_action policy(academic_group).statistics?,
                     academic_group_statistics_path(academic_group),
-                    "info",
-                    t("links.statistics"),
-                    "stats"
+                    'info',
+                    t('links.statistics'),
+                    'stats'
                   = link_to_edit policy(academic_group).edit?,
                     edit_academic_group_path(academic_group)
                   = link_to_destroy policy(academic_group).destroy?, academic_group

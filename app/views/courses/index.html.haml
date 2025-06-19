@@ -1,10 +1,10 @@
-- provide(:title, t(".title"))
+- provide(:title, t('.title'))
 
 .row
   .col-xs-12
-    %h1.text-center=t(".title")
+    %h1.text-center=t('.title')
 
-  - if current_person.can_act?("course:new")
+  - if current_person.can_act?('course:new')
     .col-xs-12.col-sm-8.col-sm-offset-2.vert-offset-top-1.vert-offset-bottom-1.text-right
       = link_to_new(true, new_course_path)
 
@@ -13,13 +13,13 @@
       %table.table.table-condensed.table-striped
         %thead
           %tr
-            %th.text-top= t(".course_title")
-            %th.text-top= t(".course_variant")
-            %th.text-top= t(".course_examination_results_count")
-            %th.text-top= t(".course_class_schedules_count")
+            %th.text-top= t('.course_title')
+            %th.text-top= t('.course_variant')
+            %th.text-top= t('.course_examination_results_count')
+            %th.text-top= t('.course_class_schedules_count')
 
             - if @courses.any? { |c| policy(c).tap { |p| break p.edit? || p.destroy? } }
-              %th.text-top.text-right= t(".actions")
+              %th.text-top.text-right= t('.actions')
 
         %tbody
           - @courses.each do |course|

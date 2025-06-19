@@ -2,24 +2,24 @@
   .row
     .col-xs-12.panel-group#accordion
       %p
-        = t("content.apply_to_programs")
+        = t('content.apply_to_programs')
       - programs.each_with_index do |program, index|
-        .panel{ class: program.visible? ? "panel-info" : "panel-default" }
+        .panel{ class: program.visible? ? 'panel-info' : 'panel-default' }
           .panel-heading
             %h4.panel-title.clearfix
-              = link_to "#program-#{index}", data: { parent: "#accordion", toggle: "collapse" } do
+              = link_to "#program-#{index}", data: { parent: '#accordion', toggle: 'collapse' } do
                 %span.caret
                 = program["title_#{locale}"]
-                = t ".click_to_learn_more"
+                = t '.click_to_learn_more'
               .pull-right
                 - if policy(study_application).create?
                   = simple_form_for study_application, remote: true, format: :js do |f|
                     = f.input :is_links_in_pending_docs, as: :hidden, input_html: { value: is_links_in_pending_docs }
                     = f.input :person_id, as: :hidden, input_html: { value: person.id }
                     = f.input :program_id, as: :hidden, input_html: { value: program.id }
-                    = f.button :button, class: "btn btn-xs btn-success btn-submit" do
+                    = f.button :button, class: 'btn btn-xs btn-success btn-submit' do
                       %span.glyphicon.glyphicon-refresh.spinner{ aria: { hidden: true } }
-                      = t("links.apply_to_program")
+                      = t('links.apply_to_program')
           .panel-collapse.collapse{ id: "program-#{index}" }
             .panel-body
               - program["description_#{locale}"].to_s.split("\n").each do |part|
@@ -29,14 +29,14 @@
   .program.alert.alert-success.clearfix
     .pull-right
       - if policy(person.study_application).destroy?
-        = button_to study_application_path(person.study_application, study_application: { is_links_in_pending_docs: is_links_in_pending_docs }), { method: :delete, remote: true, data: { confirm: t("content.confirm_withdraw") }, class: "btn btn-xs btn-danger btn-submit" } do
+        = button_to study_application_path(person.study_application, study_application: { is_links_in_pending_docs: is_links_in_pending_docs }), { method: :delete, remote: true, data: { confirm: t('content.confirm_withdraw') }, class: 'btn btn-xs btn-danger btn-submit' } do
           %span.glyphicon.glyphicon-refresh.spinner{ aria: { hidden: true } }
-          = t("links.withdraw")
+          = t('links.withdraw')
     %p
       #{t('content.you_applied')} "#{person.study_application.program["title_#{locale}"]}"
     %p
-      = t("content.ask_manager")
+      = t('content.ask_manager')
     %p
       = link_to_show_person_or_name(person.study_application.program.manager, short: true)
-      = person.study_application.program.manager.telephones.pluck(:phone).join(", ")
+      = person.study_application.program.manager.telephones.pluck(:phone).join(', ')
       = mail_to person.study_application.program.manager.email

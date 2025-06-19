@@ -1,8 +1,8 @@
-- provide(:title, t(".title", certificate_template_title: @certificate_template.title))
+- provide(:title, t('.title', certificate_template_title: @certificate_template.title))
 
 .row
   .col-xs-12
-    %h1.text-center=t(".title", certificate_template_title: @certificate_template.title)
+    %h1.text-center=t('.title', certificate_template_title: @certificate_template.title)
 
   .col-xs-12.col-sm-8.col-sm-offset-2.vert-offset-top-1
     = link_to_back(policy(CertificateTemplate).index?, certificate_templates_path)
@@ -12,12 +12,12 @@
       %table.table.table-condensed.table-striped
         %thead
           %tr
-            %th.text-top=t(".person")
-            %th.text-top=t(".serial_id")
-            %th.text-top=t(".academic_group")
-            %th.text-top=t(".issued_date")
-            %th.text-top.text-center=t(".final_score")
-            %th.text-top.text-center=t(".actions")
+            %th.text-top=t('.person')
+            %th.text-top=t('.serial_id')
+            %th.text-top=t('.academic_group')
+            %th.text-top=t('.issued_date')
+            %th.text-top.text-center=t('.final_score')
+            %th.text-top.text-center=t('.actions')
 
         %tbody
           - @certificates.each do |certificate|

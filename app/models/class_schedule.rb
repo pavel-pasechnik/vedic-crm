@@ -28,10 +28,10 @@ class ClassSchedule < ApplicationRecord
     end
 
     def by_direction(direction)
-      if direction == "past"
-        where("finish_time <= now()").order(start_time: :desc, finish_time: :desc)
+      if direction == 'past'
+        where('finish_time <= now()').order(start_time: :desc, finish_time: :desc)
       else
-        where("finish_time > now()").order(:start_time, :finish_time)
+        where('finish_time > now()').order(:start_time, :finish_time)
       end
     end
   end

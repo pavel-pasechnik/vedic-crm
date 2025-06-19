@@ -14,33 +14,33 @@ module LinkTos
   end
 
   def link_to_copy(condition, path)
-    link_to_action(condition, path, "success", t("links.copy"), "duplicate", method: :post)
+    link_to_action(condition, path, 'success', t('links.copy'), 'duplicate', method: :post)
   end
 
   def link_to_new(condition, path)
-    link_to_action(condition, path, "success", t("links.new"), "file")
+    link_to_action(condition, path, 'success', t('links.new'), 'file')
   end
 
   def link_to_edit(condition, path)
-    link_to_action(condition, path, "warning", t("links.edit"), "pencil")
+    link_to_action(condition, path, 'warning', t('links.edit'), 'pencil')
   end
 
   def link_to_index(condition, path)
-    link_to_action(condition, path, "primary", t("links.list"), "list")
+    link_to_action(condition, path, 'primary', t('links.list'), 'list')
   end
 
   def link_to_back(condition, path)
-    link_to_action(condition, path, "primary", t("links.back"), "arrow-left")
+    link_to_action(condition, path, 'primary', t('links.back'), 'arrow-left')
   end
 
   def link_to_show(condition, path)
-    link_to_action(condition, path, "primary", t("links.show"), "eye-open")
+    link_to_action(condition, path, 'primary', t('links.show'), 'eye-open')
   end
 
   def link_to_destroy(condition, path)
     link_to_action(
-      condition, path, "danger", t("links.delete"), "trash",
-      data: { confirm: t("alerts.delete_confirmation") }, method: :delete
+      condition, path, 'danger', t('links.delete'), 'trash',
+      data: { confirm: t('alerts.delete_confirmation') }, method: :delete
     )
   end
 
@@ -50,10 +50,10 @@ module LinkTos
 
     content_tag(
       :span,
-      class: "popover-enable disabled-button-with-popover",
+      class: 'popover-enable disabled-button-with-popover',
       data: { toggle: :popover, content: disability_tooltip }
     ) do
-      link_to_action(true, "", "danger", "", "trash", class: "btn btn-xs btn-danger disabled", disabled: true)
+      link_to_action(true, '', 'danger', '', 'trash', class: 'btn btn-xs btn-danger disabled', disabled: true)
     end
   end
 

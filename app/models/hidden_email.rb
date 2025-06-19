@@ -8,13 +8,13 @@ class HiddenEmail
   end
 
   def self.hide_email(email)
-    split = email.split("@")
+    split = email.split('@')
     size  = split.first.size
 
     (1...size).to_a.sample(size / 2).each do |index|
-      split.first[index] = "*"
+      split.first[index] = '*'
     end
 
-    split.join("@")
+    split.join('@')
   end
 end

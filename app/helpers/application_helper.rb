@@ -5,7 +5,7 @@ module ApplicationHelper
 
   def complex_name(person, short: false)
     if person.nil?
-      "No such person"
+      'No such person'
     elsif short
       person.diploma_name.presence || "#{person.surname} #{person.name}"
     else
@@ -33,7 +33,7 @@ module ApplicationHelper
     person_photo(
       person,
       :thumb,
-      class: "popover-photo popover-enable",
+      class: 'popover-photo popover-enable',
       data: {
         toggle: :popover,
         content: person_photo(person, :standart).to_s
@@ -46,9 +46,9 @@ module ApplicationHelper
 
     content_tag(
       :i,
-      "",
+      '',
       class: %w[fa fa-info-circle popover-enable text-info inline-info],
-      aria: { hidden: "true" },
+      aria: { hidden: 'true' },
       data: { toggle: :popover, content: text }
     )
   end
@@ -56,7 +56,7 @@ module ApplicationHelper
   def link_to_person_with_photo(person)
     return unless person
 
-    content_tag(:div, class: "link-to-person-with-photo") do
+    content_tag(:div, class: 'link-to-person-with-photo') do
       concat(thumb_with_pop(person))
       concat(link_to_show_person_or_name(person, short: true))
     end
@@ -73,11 +73,11 @@ module ApplicationHelper
   end
 
   def select2_scripts_and_stylesheets
-    content_tag(:div, class: "select2-dependencies") do
-      concat(vite_javascript_tag("select2/dist/js/select2.min", type: "text/javascript"))
-      concat(vite_javascript_tag("select2/dist/js/i18n/#{locale}", type: "text/javascript"))
-      concat(stylesheet_link_tag("select2/dist/css/select2.min", media: "all"))
-      concat(stylesheet_link_tag("select2-bootstrap-theme/dist/select2-bootstrap.min", media: "all"))
+    content_tag(:div, class: 'select2-dependencies') do
+      concat(vite_javascript_tag('select2/dist/js/select2.min', type: 'text/javascript'))
+      concat(vite_javascript_tag("select2/dist/js/i18n/#{locale}", type: 'text/javascript'))
+      concat(stylesheet_link_tag('select2/dist/css/select2.min', media: 'all'))
+      concat(stylesheet_link_tag('select2-bootstrap-theme/dist/select2-bootstrap.min', media: 'all'))
     end
   end
 end

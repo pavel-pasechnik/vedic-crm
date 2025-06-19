@@ -77,6 +77,7 @@ group :development, :test do
 
   gem 'bundler-audit'
   gem 'reek'
+  gem 'rubycritic', require: false
 end
 
 group :development do

@@ -6,8 +6,8 @@ module AcademicGroupsHelper
   end
 
   def show_pdf_export_menu?
-    current_person.can_act?("academic_group:group_list_pdf") ||
-      current_person.can_act?("academic_group:attendance_template_pdf")
+    current_person.can_act?('academic_group:group_list_pdf') ||
+      current_person.can_act?('academic_group:attendance_template_pdf')
   end
 
   def attendance_localization
@@ -35,6 +35,6 @@ module AcademicGroupsHelper
   end
 
   def date_value(date)
-    date.present? ? l(date, format: :date_picker) : ""
+    date.present? ? l(date, format: :date_picker) : ''
   end
 end

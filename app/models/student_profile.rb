@@ -22,6 +22,6 @@ class StudentProfile < ApplicationRecord
   private
 
   def assign_course_view_role
-    person.add_role_activity("course:show") if person.respond_to?(:add_role_activity)
+    person.add_role_activity('course:show') if person.respond_to?(:add_role_activity)
   end
 end

@@ -5,7 +5,7 @@ module ClassSchedulesHelper
   end
 
   def time_value(time)
-    time.present? ? l(time, format: :time_picker) : ""
+    time.present? ? l(time, format: :time_picker) : ''
   end
 
   def show_scheduled_time(c_schedule)

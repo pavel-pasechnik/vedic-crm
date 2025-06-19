@@ -13,34 +13,34 @@
 
   .col-xs-12.col-sm-8.col-sm-offset-2.vert-offset-top-1
     %h5
-      = t(".course_description")
-      = inline_info(t(".course_description_help"))
+      = t('.course_description')
+      = inline_info(t('.course_description_help'))
   .col-xs-12.col-sm-8.col-sm-offset-2
     = @course.description
 
   .col-xs-12.col-sm-8.col-sm-offset-2.vert-offset-top-1
     %h5
-      = t(".course_variant")
-      = inline_info(t(".course_variant_help"))
+      = t('.course_variant')
+      = inline_info(t('.course_variant_help'))
   .col-xs-12.col-sm-8.col-sm-offset-2
     = @course.variant
 
   .col-xs-12.col-sm-8.col-sm-offset-2.vert-offset-top-1
     %h5
-      = t(".class_schedules_count")
+      = t('.class_schedules_count')
   .col-xs-12.col-sm-8.col-sm-offset-2
     = @class_schedules_count
 
   .col-xs-12.col-sm-8.col-sm-offset-2.vert-offset-top-1
     %h5
-      = t(".total_examination_results_count")
+      = t('.total_examination_results_count')
   .col-xs-12.col-sm-8.col-sm-offset-2
     = @course.examination_results_count
 
   - if @course.teacher_profiles.any?
     .col-xs-12.col-sm-8.col-sm-offset-2.vert-offset-top-1
       %h5
-        = t(".associated_teachers")
+        = t('.associated_teachers')
     .col-xs-12.col-sm-8.col-sm-offset-2
       %ul
         - @course.teacher_profiles.each do |profile|
@@ -49,13 +49,13 @@
 
   .col-xs-12.col-sm-8.col-sm-offset-2.vert-offset-top-1
     %h5
-      = t(".associated_academic_groups")
+      = t('.associated_academic_groups')
   .col-xs-12.col-sm-8.col-sm-offset-2
     .table-responsive
       %table.table.table-condensed.table-striped
         %thead
           %tr
-            %th= t(".academic_group_title")
+            %th= t('.academic_group_title')
 
         %tbody
           - @academic_groups.each do |group|
@@ -66,24 +66,24 @@
   - if policy(Examination).index?
     .col-xs-12.col-sm-8.col-sm-offset-2.vert-offset-top-1
       %h5.clearfix
-        = t(".examinations")
+        = t('.examinations')
 
         .pull-right
-          = link_to_new(current_person.can_act?("examination:new"), new_course_examination_path(@course))
+          = link_to_new(current_person.can_act?('examination:new'), new_course_examination_path(@course))
 
     .col-xs-12.col-sm-8.col-sm-offset-2
       .table-responsive
         %table.table.table-condensed.table-striped
           %thead
             %tr
-              %th.text-top= t(".examination_title")
-              %th.text-top= t(".min_result")
-              %th.text-top= t(".max_result")
-              %th.text-top= t(".passing_score")
-              %th.text-top= t(".results_per_examination")
+              %th.text-top= t('.examination_title')
+              %th.text-top= t('.min_result')
+              %th.text-top= t('.max_result')
+              %th.text-top= t('.passing_score')
+              %th.text-top= t('.results_per_examination')
 
               - if @examinations.any? { |e| policy(e).tap { |p| break p.edit? || p.destroy? } }
-                %th.text-top.text-right= t(".actions")
+                %th.text-top.text-right= t('.actions')
 
           %tbody
             - @examinations.each do |examination|

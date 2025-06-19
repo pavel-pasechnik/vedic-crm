@@ -37,7 +37,7 @@ class ExaminationsController < HtmlRespondableController
         fallback_location: location,
         flash: {
           danger: t(
-            ".remove_examination_results_first",
+            '.remove_examination_results_first',
             examination_results_count: @examination.examination_results_count
           )
         }

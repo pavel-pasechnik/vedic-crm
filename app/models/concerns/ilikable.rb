@@ -3,7 +3,7 @@ module Ilikable
 
   class_methods do
     def ilike(*fields, query)
-      query_fields = fields.flatten.map { |field| "#{field} ILIKE :query" }.join(" OR ")
+      query_fields = fields.flatten.map { |field| "#{field} ILIKE :query" }.join(' OR ')
 
       where(query_fields, query: "%#{sanitize_sql_like(query || '')}%")
     end

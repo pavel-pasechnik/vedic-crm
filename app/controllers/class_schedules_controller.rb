@@ -27,7 +27,7 @@ class ClassSchedulesController < HtmlRespondableController
 
     @class_schedule.save
 
-    location = if params[:commit] == t("class_schedules.create_and_clone")
+    location = if params[:commit] == t('class_schedules.create_and_clone')
       new_class_schedule_path(class_schedule: class_schedule_params)
     else
       class_schedules_path

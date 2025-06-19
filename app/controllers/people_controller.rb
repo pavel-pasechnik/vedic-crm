@@ -11,7 +11,7 @@ class PeopleController < ApplicationController
   after_action :verify_policy_scoped, except: %i[new create]
   after_action :refresh_class_schedules_mv, only: :update
 
-  layout "person_tabs", only: %i[show journal]
+  layout 'person_tabs', only: %i[show journal]
 
   def index
     authorize Person
@@ -81,7 +81,7 @@ class PeopleController < ApplicationController
 
   def update
     if @person.update(PersonParams.filter(params).merge(skip_password_validation: true))
-      flash[:success] = "Person was successfully updated."
+      flash[:success] = 'Person was successfully updated.'
 
       redirect_to direct_to_crop(person_path(@person), @person)
     else
@@ -90,9 +90,9 @@ class PeopleController < ApplicationController
   end
   def destroy
     if @person.destroy.destroyed?
-      redirect_to people_path, flash: { success: "Person record deleted!" }
+      redirect_to people_path, flash: { success: 'Person record deleted!' }
     else
-      redirect_back fallback_location: root_path, flash: { danger: "Person deletion failed!" }
+      redirect_back fallback_location: root_path, flash: { danger: 'Person deletion failed!' }
     end
 
     # TODO: DRY the controller with responders
@@ -100,7 +100,7 @@ class PeopleController < ApplicationController
 
 
   def show_photo
-    path = if params[:version] == "default"
+    path = if params[:version] == 'default'
       @person.photo_url
     else
       @person.photo.versions[params[:version].to_sym].url
@@ -108,8 +108,8 @@ class PeopleController < ApplicationController
 
     send_file(
       path,
-      disposition: "inline",
-      type: "image/jpeg",
+      disposition: 'inline',
+      type: 'image/jpeg',
       x_sendfile: true
     )
   end

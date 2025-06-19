@@ -12,7 +12,7 @@ class Telephone < ApplicationRecord
   def phone_format
     return true if GlobalPhone.validate(phone)
 
-    errors.add(:phone, I18n.t("activerecord.errors.models.telephone.invalid"))
+    errors.add(:phone, I18n.t('activerecord.errors.models.telephone.invalid'))
   end
 
   def normalize

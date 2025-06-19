@@ -1,7 +1,7 @@
 class CopyCertificateTemplatesController < HtmlRespondableController
   def create
     orig_template = CertificateTemplate.find(params[:certificate_template_id])
-    new_template = CertificateTemplate.new(orig_template.attributes.slice("title", "institution_id", "program_type"))
+    new_template = CertificateTemplate.new(orig_template.attributes.slice('title', 'institution_id', 'program_type'))
 
     authorize new_template
 

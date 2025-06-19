@@ -1,4 +1,4 @@
-= link_to_edit params[:action] != "edit".freeze && policy(program).edit?,
+= link_to_edit params[:action] != 'edit'.freeze && policy(program).edit?,
   edit_program_path(program)
 
 = link_to_new policy(program).new?, new_program_path

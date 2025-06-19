@@ -9,9 +9,9 @@ class AcademicGroup < ApplicationRecord
   has_many :class_schedules, through: :academic_group_schedules
   has_many :certificates, dependent: :nullify
 
-  belongs_to :administrator, class_name: "Person", inverse_of: "administrated_groups"
-  belongs_to :praepostor, class_name: "Person", inverse_of: "praeposted_groups"
-  belongs_to :curator, class_name: "Person", inverse_of: "curated_groups"
+  belongs_to :administrator, class_name: 'Person', inverse_of: 'administrated_groups'
+  belongs_to :praepostor, class_name: 'Person', inverse_of: 'praeposted_groups'
+  belongs_to :curator, class_name: 'Person', inverse_of: 'curated_groups'
 
   has_and_belongs_to_many :courses
 
@@ -31,12 +31,12 @@ class AcademicGroup < ApplicationRecord
   def active_students
     leave_date = if active?
       {
-        query: "group_participations.leave_date IS ?",
+        query: 'group_participations.leave_date IS ?',
         value: nil
       }
     else
       {
-        query: "group_participations.leave_date >= ? OR group_participations.leave_date IS NULL",
+        query: 'group_participations.leave_date >= ? OR group_participations.leave_date IS NULL',
         value: graduated_at
       }
     end

@@ -1,5 +1,5 @@
 = simple_nested_form_for @certificate_template do |f|
-  = render "shared/error_messages", object: f.object
+  = render 'shared/error_messages', object: f.object
 
   .form-inputs
     = f.input :title
@@ -16,14 +16,14 @@
       - if f.object.file.present?
         .embed-responsive.embed-responsive-4by3
           %iframe.embed-responsive-item{ src: certificate_template_preview_pdf_path(f.object) }
-            = t(".file_present")
+            = t('.file_present')
       - else
-        = t(".file_not_present")
+        = t('.file_not_present')
 
-    = render "nested_certificate_template_entries", f: f
-    = render "nested_certificate_template_images", f: f
+    = render 'nested_certificate_template_entries', f: f
+    = render 'nested_certificate_template_images', f: f
 
   .form-actions
-    = f.button :button, class: "btn btn-submit col-xs-12" do
+    = f.button :button, class: 'btn btn-submit col-xs-12' do
       %span.glyphicon.glyphicon-refresh.spinner{ aria: { hidden: true } }
       = submit_label

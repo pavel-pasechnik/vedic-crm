@@ -36,7 +36,7 @@ class StudyApplicationsController < ApplicationController
 
       @is_links_in_pending_docs = ActiveModel::Type::Boolean.new.cast(permitted_params[:is_links_in_pending_docs])
 
-      render partial: "common"
+      render partial: 'common'
     else
       render nothing: true, status: :not_implemented
     end

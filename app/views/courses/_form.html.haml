@@ -2,16 +2,16 @@
   = select2_scripts_and_stylesheets
 
 = simple_form_for @course do |f|
-  = render "shared/error_messages", object: f.object
+  = render 'shared/error_messages', object: f.object
 
   .form-inputs
     = f.input :title
-    = f.input :description, hint: t("courses.show.course_description_help")
-    = f.input :variant, hint: t("courses.show.course_variant_help")
+    = f.input :description, hint: t('courses.show.course_description_help')
+    = f.input :variant, hint: t('courses.show.course_variant_help')
     = f.association :teacher_profiles, label_method: :complex_name, collection: f.object.teacher_profiles,
-                    input_html: { data: { placeholder: "Select an option", 'ajax--url': ui_teacher_profiles_path } }
+                    input_html: { data: { placeholder: 'Select an option', 'ajax--url': ui_teacher_profiles_path } }
 
   .form-actions
-    = f.button :button, class: "btn btn-submit col-xs-12" do
+    = f.button :button, class: 'btn btn-submit col-xs-12' do
       %span.glyphicon.glyphicon-refresh.spinner{ aria: { hidden: true } }
       = submit_label

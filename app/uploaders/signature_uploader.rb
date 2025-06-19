@@ -6,6 +6,6 @@ class SignatureUploader < BaseImageUploader
   private
 
   def default_extension
-    "png"
+    'png'
   end
 end
