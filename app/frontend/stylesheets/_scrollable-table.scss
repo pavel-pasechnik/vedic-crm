@@ -3,10 +3,15 @@
 
   .scrollable-rows {
     display: flex;
-    overflow-x: scroll;
-    overflow-y: hidden;
     padding-right: 1px;
     padding-bottom: 1em;
+    overflow: scroll hidden;
+  }
+
+  .cell {
+    margin-bottom: -1px;
+    border-style: solid;
+    border-width: 1px;
   }
 
   .scrollable-row {
@@ -19,16 +24,16 @@
 
   .scrollable-header {
     display: flex;
-    align-items: center;
-    margin-bottom: 0.5em;
     flex-direction: column;
+    align-items: center;
     justify-content: flex-end;
+    margin-bottom: 0.5em;
   }
 
   .pivoted-content {
-    transform: rotate(180deg);
-    writing-mode: tb-rl;
     white-space: nowrap;
+    writing-mode: tb-rl;
+    transform: rotate(180deg);
   }
 
   .people-row {
@@ -37,11 +42,5 @@
 
   .person-name {
     white-space: nowrap;
-  }
-
-  .cell {
-    border-style: solid;
-    border-width: 1px;
-    margin-bottom: -1px;
   }
 }

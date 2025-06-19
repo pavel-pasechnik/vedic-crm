@@ -73,15 +73,19 @@
 .jcrop-box {
   z-index: 2;
   display: block;
+  width: 100%;
+  height: 100%;
   padding: 0;
   margin: 0;
   font-size: 0;
+  cursor: move;
   background: 0 0;
   border: 0;
 }
 
-.jcrop-box:hover {
-  background: 0 0;
+.jcrop-active,
+.jcrop-box {
+  position: relative;
 }
 
 .jcrop-box:active {
@@ -90,17 +94,6 @@
 
 .jcrop-box:focus {
   outline: 1px rgb(128 128 128 / 65%) dotted;
-}
-
-.jcrop-active,
-.jcrop-box {
-  position: relative;
-}
-
-.jcrop-box {
-  width: 100%;
-  height: 100%;
-  cursor: move;
 }
 
 .jcrop-handle {

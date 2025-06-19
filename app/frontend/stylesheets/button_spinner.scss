@@ -9,8 +9,8 @@
 }
 
 .spinner {
-  opacity: 0;
   width: 0;
+  opacity: 0;
 }
 
 .btn-submit.active {
@@ -18,9 +18,9 @@
 }
 
 .btn-submit.active .spinner {
-  opacity: 1;
   width: auto;
-  animation: roll 2s infinite;
-  transform: rotate(30deg);
+  opacity: 1;
   transition: opacity 0.25s 0.25s;
+  transform: rotate(30deg);
+  animation: roll 2s infinite;
 }

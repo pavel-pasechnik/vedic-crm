@@ -4,26 +4,26 @@
   width: 100%;
 
   .iti-flag {
-    background-image: asset-url('intl-tel-input/build/img/flags.png') !important;
+    background-image: asset-url('intl-tel-input/build/img/flags.png');
   }
 }
 
 /* Jcrop */
 
 .jcrop-border {
-  background: white asset-url('Jcrop.gif') !important;
+  background: white asset-url('Jcrop.gif');
 }
 
 .jcrop-hl-active {
   .jcrop-selection.jcrop-current {
     .jcrop-border {
-      background: gray asset-url('Jcrop.gif') !important;
+      background: gray asset-url('Jcrop.gif');
     }
   }
 
   .jcrop-selection.jcrop-focus {
     .jcrop-border {
-      background: asset-url('Jcrop.gif') !important;
+      background: asset-url('Jcrop.gif');
     }
   }
 }

@@ -1,5 +1,3 @@
-
-
 {
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
@@ -7,12 +5,33 @@
   "editor.formatOnSave": true,
   "files.eol": "\n",
   "files.autoSave": "onFocusChange",
+  "stylelint.enable": true,
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ],
   "editor.codeActionsOnSave": {
     "source.fixAll": "always",
     "source.fixAll.eslint": "always",
     "source.fixAll.stylelint": "always",
     "source.organizeImports": "always"
   },
+  "local-history.enabled": 1, // Only inside workspace (to avoid writing history on single files outside the project)
+  "local-history.daysLimit": 60, // Store histories for 60 days
+  "local-history.maxDisplay": 20, // Show 20 latest versions when calling history
+  "local-history.saveDelay": 0, // Save instantly when saving a file
+  "local-history.dateLocale": "en-GB", // Date format (you can choose your own)
+  "local-history.exclude": [
+    ".git/**",
+    "node_modules/**",
+    "vendor/**",
+    "tmp/**",
+    "log/**",
+    "coverage/**",
+    ".history/**",
+    ".vscode/**"
+  ],
+  "local-history.treeLocation": "explorer",
   "[ruby]": {
     "editor.defaultFormatter": "Shopify.ruby-lsp",
     "editor.formatOnSave": true,
@@ -37,6 +56,6 @@
   },
   "[scss]": {
     "editor.defaultFormatter": "stylelint.vscode-stylelint",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
   }
 }
