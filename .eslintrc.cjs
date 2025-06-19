@@ -106,5 +106,6 @@ module.exports = {
     App: false,
     getCurrentPages: false,
     Component: false,
+    Raven: 'readonly',
   },
 };

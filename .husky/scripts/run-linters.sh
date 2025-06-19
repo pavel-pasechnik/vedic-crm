@@ -15,7 +15,7 @@ echo "Running HAML Lint with auto-correct..."
 bundle exec haml-lint --auto-correct .
 
 echo "Running ERB Lint with auto-correct..."
-bundle exec erblint --lint-all --autocorrect
+bundle exec erb_lint --lint-all --autocorrect
 
 echo "Running ESLint with auto-fix..."
 npm run lint:js:fix || npm run lint:fix

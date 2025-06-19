@@ -15,7 +15,7 @@
     "lint:fix": "npm run lint:js:fix && npm run lint:css:fix",
 
     "rubocop": "bundle exec rubocop -A",
-    "lint": "stylelint \"**/*.{scss,css}\" --fix --formatter compact && eslint  . --fix --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "npm run lint:js && npm run lint:css",
     "format": "prettier --write .",
 
     "prepare": "husky install"
