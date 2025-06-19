@@ -60,7 +60,7 @@ jobs:
           set -e
           bin/rubocop
           bundle exec erb_lint --lint-all
-          bin/haml-lint
+          bundle exec haml-lint
           npx eslint . --max-warnings=0
           npx stylelint "**/*.{css,scss}" --max-warnings=0"
 
