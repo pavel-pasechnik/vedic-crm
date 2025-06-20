@@ -1,4 +1,3 @@
-module Types
   class SymbolWrapperType < ActiveRecord::Type::Value
     def serialize(value)
       value.to_s if value.present?
@@ -10,4 +9,3 @@ module Types
   end
 
   ActiveRecord::Type.register(:symbol_wrapper, self::SymbolWrapperType)
-end

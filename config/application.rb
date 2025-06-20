@@ -25,5 +25,6 @@ module VedicCrm
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.eager_load_paths += %W[#{config.root}/app/uploaders]
+    config.eager_load_paths << Rails.root.join('app/types')
   end
 end
