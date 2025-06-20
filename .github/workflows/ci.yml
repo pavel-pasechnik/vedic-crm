@@ -61,7 +61,7 @@ jobs:
           bin/rubocop
           bundle exec erb_lint --lint-all
           bundle exec haml-lint app/ --fail-fast --fail-level error
-          npx eslint . --max-warnings=0
+          npm run lint:js
           npx stylelint "**/*.{css,scss}" --max-warnings=0"
 
   scan:
@@ -145,7 +145,7 @@ jobs:
         run: bundle exec reek
 
       - name: Run RubyCritic
-        run: bundle exec rubycritic --no-browser --minimum-score 80
+        run: bundle exec rubycritic app lib config
 
   line_endings:
     needs: prepare

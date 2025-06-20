@@ -54,6 +54,7 @@ Vedic CRM is a full-featured CRM system built on a modern technology stack with 
 ![HAML Lint](https://img.shields.io/badge/HAMLLint-enabled-brightgreen?style=for-the-badge&logo=ruby)
 ![ESLint](https://img.shields.io/badge/ESLint-enabled-brightgreen?style=for-the-badge&logo=eslint)
 ![Stylelint](https://img.shields.io/badge/Stylelint-enabled-brightgreen?style=for-the-badge&logo=stylelint)
+![Sentry](https://img.shields.io/badge/Sentry-error--monitoring-362D59?style=for-the-badge&logo=sentry&logoColor=white)
 
 ---
 

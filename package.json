@@ -35,7 +35,7 @@
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "@vitejs/plugin-react": "^4.5.1",
-    "eslint": "^8.57.0",
+    "eslint": "8.57.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^10.1.5",
     "eslint-config-stylelint": "^22.0.0",
