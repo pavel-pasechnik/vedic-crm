@@ -1,17 +1,8 @@
 class Person < ApplicationRecord
   include Ilikable
 
-  class SymbolWrapper
-    def self.load(value, *_args)
-      value.try(:to_sym)
-    end
 
-    def self.dump(value, *_args)
-      value.to_s
-    end
-  end
-
-  serialize :locale, coder: SymbolWrapper
+  attribute :locale, :symbol_wrapper
 
   attr_accessor :skip_password_validation, :photo_upload_height, :photo_upload_width, :crop_x, :crop_y, :crop_w,
                 :crop_h, :privacy_agreement
@@ -270,3 +261,17 @@ class Person < ApplicationRecord
     end
   end
 end
+
+
+# Custom ActiveRecord type for symbol serialization
+class SymbolWrapperType < ActiveRecord::Type::Value
+  def serialize(value)
+    value.to_s if value.present?
+  end
+
+  def deserialize(value)
+    value&.to_sym
+  end
+end
+
+ActiveRecord::Type.register(:symbol_wrapper, SymbolWrapperType)

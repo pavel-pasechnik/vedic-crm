@@ -1,7 +1,7 @@
 class Questionnaire < ApplicationRecord
   include Ilikable
 
-  serialize :rule, coder: JSON
+   attribute :data, :json
 
   has_many :programs_questionnaires, dependent: :destroy, class_name: 'ProgramsQuestionnaire'
   has_many :questions, dependent: :destroy
