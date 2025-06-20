@@ -7,3 +7,5 @@ class SymbolWrapperType < ActiveRecord::Type::Value
     value&.to_sym
   end
 end
+
+ActiveRecord::Type.register(:symbol_wrapper, self)
