@@ -6,15 +6,14 @@ Vedic CRM is a full-featured CRM system built on a modern technology stack with 
 
 ## 📊 Badges Summary
 
-[![CI](https://github.com/pavel-pasechnik/vedic-crm/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/pavel-pasechnik/vedic-crm/actions)
-[![Coverage Status](https://coveralls.io/repos/github/pavel-pasechnik/vedic-crm/badge.svg?branch=main)](https://coveralls.io/github/pavel-pasechnik/vedic-crm)
-[![Security Audit](https://img.shields.io/badge/Security-Audit-green)](https://github.com/pavel-pasechnik/vedic-crm/actions/workflows/ci.yml)
-[![Lint Status](https://img.shields.io/badge/Lint-Pass-brightgreen)](https://github.com/pavel-pasechnik/vedic-crm/actions/workflows/ci.yml)
-[![RubyCritic](https://img.shields.io/badge/RubyCritic-Enabled-blueviolet)](https://github.com/pavel-pasechnik/vedic-crm/actions/workflows/ci.yml)
-
-<!-- Code Climate Badges -->
-[![Maintainability](https://api.codeclimate.com/v1/badges/ab46818dc16b1f934d2c/maintainability)](https://codeclimate.com/github/pavel-pasechnik/vedic-crm/maintainability)
-<!-- [![Test Coverage](https://api.codeclimate.com/v1/badges/ab46818dc16b1f934d2c/test_coverage)](https://codeclimate.com/github/pavel-pasechnik/vedic-crm/test_coverage) -->
+[![CI](https://github.com/pavel-pasechnik/vedic-crm/actions/workflows/ci.yml/badge.svg?branch=main&style=flat-square)](https://github.com/pavel-pasechnik/vedic-crm/actions)
+[![Coverage Status](https://coveralls.io/repos/github/pavel-pasechnik/vedic-crm/badge.svg?branch=main&style=flat-square)](https://coveralls.io/github/pavel-pasechnik/vedic-crm)
+[![Security Audit](https://img.shields.io/badge/Security-Audit-green?style=flat-square)](https://github.com/pavel-pasechnik/vedic-crm/actions/workflows/ci.yml)
+[![Lint Status](https://img.shields.io/badge/Lint-Pass-brightgreen?style=flat-square)](https://github.com/pavel-pasechnik/vedic-crm/actions/workflows/ci.yml)
+[![RubyCritic](https://img.shields.io/badge/RubyCritic-Enabled-blueviolet?style=flat-square)](https://github.com/pavel-pasechnik/vedic-crm/actions/workflows/ci.yml)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ab46818dc16b1f934d2c/maintainability?style=flat-square)](https://codeclimate.com/github/pavel-pasechnik/vedic-crm/maintainability)
+[![Last Commit](https://img.shields.io/github/last-commit/pavel-pasechnik/vedic-crm?style=flat-square)](https://github.com/pavel-pasechnik/vedic-crm/commits)
+[![Snyk](https://img.shields.io/snyk/vulnerabilities/github/pavel-pasechnik/vedic-crm?style=flat-square)](https://snyk.io/test/github/pavel-pasechnik/vedic-crm)
 
 ---
 
