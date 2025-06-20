@@ -55,6 +55,15 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Restore Node modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: node-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install Node.js dependencies
+        run: npm ci
+
       - name: Run All Linters
         run: |
           set -e

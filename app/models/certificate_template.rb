@@ -16,7 +16,7 @@ class CertificateTemplate < ApplicationRecord
 
   validates :program_type, presence: true
 
-  mount_uploader :file, PDFUploader
+  mount_uploader :file, PdfUploader
 
   has_paper_trail
 end
